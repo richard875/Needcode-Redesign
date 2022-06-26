@@ -1,0 +1,181 @@
+/*#region Define font face*/
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: bold;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: boldItalic;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-BoldItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: extraLight;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-ExtraLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: extraLightItalic;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-ExtraLightItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: italic;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-Italic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: light;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: lightItalic;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-LightItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: medium;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: mediumItalic;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-MediumItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: regular;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: semiBold;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: semiBoldItalic;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-SemiBoldItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: text;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-Text.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: textItalic;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-TextItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: thin;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-Thin.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  font-weight: thinItalic;
+  src: local("IBMPlexMono"),
+    url(../../assets/fonts/IBMPlexMono-ThinItalic.ttf) format("truetype");
+}
+/*#endregion */
+
+/*#region Use fonts*/
+.IBMPlexMono-Bold {
+  font-family: "IBMPlexMono" !important;
+  font-weight: bold !important;
+}
+// Define the rest
+.IBMPlexMono-BoldItalic {
+  font-family: "IBMPlexMono" !important;
+  font-weight: boldItalic !important;
+}
+.IBMPlexMono-ExtraLight {
+  font-family: "IBMPlexMono" !important;
+  font-weight: extraLight !important;
+}
+.IBMPlexMono-ExtraLightItalic {
+  font-family: "IBMPlexMono" !important;
+  font-weight: extraLightItalic !important;
+}
+.IBMPlexMono-Italic {
+  font-family: "IBMPlexMono" !important;
+  font-weight: italic !important;
+}
+.IBMPlexMono-Light {
+  font-family: "IBMPlexMono" !important;
+  font-weight: light !important;
+}
+.IBMPlexMono-LightItalic {
+  font-family: "IBMPlexMono" !important;
+  font-weight: lightItalic !important;
+}
+.IBMPlexMono-Medium {
+  font-family: "IBMPlexMono" !important;
+  font-weight: medium !important;
+}
+.IBMPlexMono-MediumItalic {
+  font-family: "IBMPlexMono" !important;
+  font-weight: mediumItalic !important;
+}
+.IBMPlexMono-Regular {
+  font-family: "IBMPlexMono" !important;
+  font-weight: regular !important;
+}
+.IBMPlexMono-SemiBold {
+  font-family: "IBMPlexMono" !important;
+  font-weight: semiBold !important;
+}
+.IBMPlexMono-SemiBoldItalic {
+  font-family: "IBMPlexMono" !important;
+  font-weight: semiBoldItalic !important;
+}
+.IBMPlexMono-Text {
+  font-family: "IBMPlexMono" !important;
+  font-weight: text !important;
+}
+.IBMPlexMono-TextItalic {
+  font-family: "IBMPlexMono" !important;
+  font-weight: textItalic !important;
+}
+.IBMPlexMono-Thin {
+  font-family: "IBMPlexMono" !important;
+  font-weight: thin !important;
+}
+.IBMPlexMono-ThinItalic {
+  font-family: "IBMPlexMono" !important;
+  font-weight: thinItalic !important;
+}
+/*#endregion */

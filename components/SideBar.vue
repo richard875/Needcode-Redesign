@@ -1,3 +1,22 @@
+<script lang="ts">
+import QuestionSet from "src/models/questionSet";
+
+export default {
+  props: {
+    questions: {
+      type: Array<QuestionSet>,
+      required: true
+    }
+  },
+  data() {
+    return {
+      questionsData: this.questions,
+      currentTab: 0
+    };
+  },
+};
+</script>
+
 <template>
   <div class="fixed w-80 top-12 bottom-0 left-0 bg-white sidebar">
     <bx-search
@@ -9,7 +28,7 @@
     <!-- Tags -->
     <div class="p-3 select-none">
       <div class="mb-1 ml-2 flex items-center">
-        <ProgressCircle />
+        <SharedProgressCircle />
         <bx-tag class="ml-2 text-xs text-gray-900" type="blue">
           <p>&nbsp;75 / 150 questions completed&nbsp;</p></bx-tag
         >
@@ -28,10 +47,12 @@
 
     <div style="height: 70%; overflow: auto">
       <bx-side-nav-link
-        v-for="index in 18"
+        v-for="(question, index) in questionsData"
         :key="index"
+        :class="{ 'bx-side-nav-link-active': currentTab == index }"
         href="javascript:void(0)"
-        >L0 link</bx-side-nav-link
+        @click="currentTab = index"
+        >{{ question.questionSet }}</bx-side-nav-link
       >
     </div>
 
@@ -84,22 +105,17 @@
     text-align: left;
   }
 
-  .blind {
-    color: #ffffff;
-    background-color: #161616;
-  }
-
-  .neetcode {
-    border: 2px solid #161616;
-  }
-
   bx-side-nav-link {
     transition: 0.1s;
-    border-left: 5px solid #2e62fe;
+    border-left: 5px solid transparent;
 
     &:hover {
       background-color: #e9e9e9 !important;
     }
+  }
+
+  .bx-side-nav-link-active {
+    border-left-color: #2e62fe;
   }
 }
 </style>

@@ -1,8 +1,8 @@
 interface Question {
   question: string;
-  questionDifficulty: number;
+  difficulty: number;
   leetcodeUrl: string;
-  youtubeUrl: string;
+  videoUrl: string;
   pythonUrl: string;
   javaUrl: string;
   blindQuestion: boolean;

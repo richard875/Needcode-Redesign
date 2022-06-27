@@ -76,6 +76,7 @@ export default {
     <!-- Fixed at bottom -->
     <div class="fixed bottom-0 w-full">
       <div class="p-3 text-xs leading-6 text-gray-700">
+        <p>Made with &#9829; in Sydney, Australia &#127462;&#127482;</p>
         <p>
           Contribute solutions:
           <a

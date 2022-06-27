@@ -162,17 +162,8 @@ export default {
 .sidebar {
   border-right: 1px solid #e0e0e0;
 
-  button {
-    padding-left: 12px;
-    height: 50px;
-    width: 50%;
-    font-size: 15px;
-    text-align: left;
-  }
-
   bx-side-nav-link {
-    transition: 0.1s;
-    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
 
     &:hover {
       background-color: #e9e9e9 !important;
@@ -180,10 +171,12 @@ export default {
   }
 
   .bx-side-nav-link-active {
-    border-left-color: #2e62fe;
+    border-right-color: #2e62fe;
+    background-color: #e9e9e9 !important;
   }
 }
 
+// YouTube player in the popup modal
 .video-container {
   position: relative;
   padding-bottom: 56.25%;

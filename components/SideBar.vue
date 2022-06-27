@@ -10,7 +10,6 @@ export default {
   },
   data() {
     return {
-      questionsData: this.questions as Array<QuestionSet>,
       currentTab: 0 as Number,
     };
   },
@@ -27,7 +26,7 @@ export default {
   <div class="fixed w-80 top-12 bottom-0 left-0 bg-white sidebar">
     <bx-search
       label-text="Search"
-      placeholder="Search Leetcode"
+      placeholder="Search Questions"
       size="xl"
     ></bx-search>
 
@@ -53,7 +52,7 @@ export default {
 
     <div style="height: 70%; overflow: auto">
       <bx-side-nav-link
-        v-for="(question, index) in questionsData"
+        v-for="(question, index) in questions"
         :key="index"
         :class="{ 'bx-side-nav-link-active': currentTab == index }"
         href="javascript:void(0)"

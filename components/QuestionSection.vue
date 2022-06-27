@@ -1,20 +1,25 @@
 <script lang="ts">
-import data from "assets/data/questions.json";
 import QuestionSet from "src/models/questionSet";
-import Difficulty from "/src/enum/difficulty";
-
-const questions: QuestionSet[] = data;
+import Difficulty from "../src/enum/difficulty";
 
 export default {
   props: {
+    questions: {
+      type: Array<QuestionSet>,
+      required: true,
+    },
     currentTab: {
       type: Number,
       required: false,
     },
+    blindQuestions: {
+      type: Boolean,
+      required: true,
+    },
   },
   computed: {
     selectedQuestion() {
-      return questions[this.currentTab] as QuestionSet;
+      return this.questions[this.currentTab] as QuestionSet;
     },
   },
   methods: {
@@ -29,6 +34,10 @@ export default {
         default:
           return "gray";
       }
+    },
+    statusChecked(event: any, index: number) {
+      console.log(event);
+      console.log(index);
     },
   },
   data() {
@@ -73,8 +82,11 @@ export default {
           v-for="(question, index) in selectedQuestion.questions"
           :key="index"
         >
-          <bx-table-cell style="border-left: 5px solid #0f62fe">
-            <bx-checkbox></bx-checkbox>
+          <!-- <bx-table-cell :class="{ 'question-attempted': currentTab == index }"> -->
+          <bx-table-cell>
+            <bx-checkbox
+              @bx-checkbox-changed="statusChecked($event, index)"
+            ></bx-checkbox>
           </bx-table-cell>
           <bx-table-cell>
             <a
@@ -93,7 +105,12 @@ export default {
             </bx-tag>
           </bx-table-cell>
           <bx-table-cell>
-            <bx-btn size="sm" :href="question.videoUrl" target="_blank">
+            <bx-btn
+              v-if="question.videoUrl !== ''"
+              size="sm"
+              :href="question.videoUrl"
+              target="_blank"
+            >
               <span class="text-xs">Video</span>
               <svg
                 focusable="false"
@@ -117,10 +134,14 @@ export default {
                 />
               </svg>
             </bx-btn>
+            <bx-btn v-else size="sm" disabled>
+              <span class="text-xs">Video coming soon</span>
+            </bx-btn>
           </bx-table-cell>
           <bx-table-cell>
             <div class="flex">
               <bx-tooltip-icon
+                v-if="question.pythonUrl !== ''"
                 alignment="center"
                 body-text="Python"
                 direction="bottom"
@@ -147,6 +168,7 @@ export default {
                 </bx-btn>
               </bx-tooltip-icon>
               <bx-tooltip-icon
+                v-if="question.javaUrl !== ''"
                 class="ml-3"
                 alignment="center"
                 body-text="Java"
@@ -181,3 +203,9 @@ export default {
     </bx-table>
   </bx-data-table>
 </template>
+
+<style lang="scss" scoped>
+.question-attempted {
+  border-left: 5px solid #0f62fe !important;
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full h-12 pl-3 navbar flex items-center justify-between select-none"
+    class="fixed w-full h-12 pl-3 navbar flex items-center justify-between z-50 select-none"
   >
     <!-- Left -->
     <div class="flex items-center justify-center">

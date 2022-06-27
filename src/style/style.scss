@@ -2,3 +2,28 @@ html,
 body {
   background-color: #fefefe;
 }
+
+// In the code viewer
+.copy-to-clipboard-button {
+  width: 80px !important;
+  height: 35px !important;
+  color: #ffffff !important;
+  position: absolute !important;
+  top: 8px !important;
+  right: 10px !important;
+  background-color: #4c4c4c !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06)) !important;
+
+  &:hover,
+  &:focus {
+    outline: none !important;
+  }
+
+  span {
+    font-size: 12px !important;
+    font-family: "IBMPlexMonoRegular" !important;
+  }
+}

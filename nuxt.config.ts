@@ -57,6 +57,8 @@ export default defineNuxtConfig({
           "bx-modal-heading",
           "bx-modal-body",
           "bx-checkbox",
+          "bx-modal-footer",
+          "bx-modal-footer-button",
         ].includes(tag),
     },
   },

@@ -2,6 +2,7 @@
 import QuestionSet from "src/models/questionSet";
 
 export default {
+  emits: ["updateCurrentTab", "updateQuestionMode"],
   props: {
     questions: {
       type: Array<QuestionSet>,
@@ -11,6 +12,7 @@ export default {
   data() {
     return {
       currentTab: 0 as Number,
+      blindQuestions: false as Boolean,
       openModal: false as Boolean
     };
   },
@@ -18,6 +20,10 @@ export default {
     selectTab(index: number) {
       this.currentTab = index;
       this.$emit("updateCurrentTab", this.currentTab);
+    },
+    changeQuestionMode(blindQuestions: boolean) {
+      this.blindQuestions = blindQuestions;
+      this.$emit("updateQuestionMode", this.blindQuestions);
     }
   },
   computed: {
@@ -51,10 +57,20 @@ export default {
         </bx-tag>
       </div>
 
-      <bx-tag class="cursor-pointer bg-gray-800 text-white" type="gray">
+      <bx-tag
+        class="cursor-pointer"
+        :class="{ 'bg-gray-800 text-white': blindQuestions }"
+        type="gray"
+        @click="changeQuestionMode(true)"
+      >
         &nbsp;Blind 75&nbsp;
       </bx-tag>
-      <bx-tag class="cursor-pointer" type="gray">
+      <bx-tag
+        class="cursor-pointer"
+        :class="{ 'bg-gray-800 text-white': !blindQuestions }"
+        type="gray"
+        @click="changeQuestionMode(false)"
+      >
         &nbsp;Neetcode 150&nbsp;
       </bx-tag>
     </div>

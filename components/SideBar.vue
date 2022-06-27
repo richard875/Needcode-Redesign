@@ -92,15 +92,24 @@ export default {
     <!-- Fixed at bottom -->
     <div class="fixed bottom-0 w-full">
       <div class="p-3 text-xs leading-6 text-gray-700">
-        <p>Made with &#9829; in Sydney, Australia &#127462;&#127482;</p>
+        <p>
+          Made with &#9829; in
+          <a
+            href="https://www.youtube.com/watch?v=rMdbVHPmCW0"
+            target="_blank"
+            class="text-blue-500 hover:text-blue-700"
+            >Sydney, Australia &#127462;&#127482;
+          </a>
+        </p>
         <p>
           Contribute solutions:
           <a
             href="https://github.com/neetcode-gh/leetcode"
             target="_blank"
             class="text-blue-500 hover:text-blue-700"
-            >Github</a
           >
+            Github
+          </a>
         </p>
         <p>
           Contact:

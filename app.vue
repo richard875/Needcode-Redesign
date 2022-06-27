@@ -6,6 +6,7 @@ import "carbon-web-components/es/components/ui-shell/index.js";
 import "carbon-web-components/es/components/tag/index.js";
 import "carbon-web-components/es/components/data-table/index.js";
 import "carbon-web-components/es/components/checkbox/index.js";
+import "carbon-web-components/es/components/modal/index.js";
 import data from "assets/data/questions.json";
 import QuestionSet from "src/models/questionSet";
 

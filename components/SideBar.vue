@@ -10,9 +10,15 @@ export default {
   },
   data() {
     return {
-      questionsData: this.questions,
-      currentTab: 0
+      questionsData: this.questions as Array<QuestionSet>,
+      currentTab: 0 as Number,
     };
+  },
+  methods: {
+    selectTab(index: number) {
+      this.currentTab = index;
+      this.$emit("updateCurrentTab", this.currentTab);
+    }
   },
 };
 </script>
@@ -51,7 +57,7 @@ export default {
         :key="index"
         :class="{ 'bx-side-nav-link-active': currentTab == index }"
         href="javascript:void(0)"
-        @click="currentTab = index"
+        @click="selectTab(index)"
         >{{ question.questionSet }}</bx-side-nav-link
       >
     </div>

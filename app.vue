@@ -1,4 +1,4 @@
-<script>
+<script lang="ts" setup>
 import "carbon-web-components/es/components/tooltip/index.js";
 import "carbon-web-components/es/components/search/index.js";
 import "carbon-web-components/es/components/button/index.js";
@@ -7,8 +7,9 @@ import "carbon-web-components/es/components/tag/index.js";
 import "carbon-web-components/es/components/data-table/index.js";
 import "carbon-web-components/es/components/notification/index.js";
 import data from "./assets/data/questions.json";
+import QuestionSet from "src/models/questionSet";
 
-console.log(data);
+const questions: QuestionSet[] = data;
 </script>
 
 <template>
@@ -17,13 +18,13 @@ console.log(data);
     <NavBar />
 
     <!-- Left side -->
-    <SideBar />
+    <SideBar :questions="questions" />
 
     <!-- Right side -->
     <div class="ml-80 p-10">
       <p class="mb-2 text-xl">Arrays & Hashing</p>
       <div class="mb-4 flex items-center">
-        <ProgressCircle />
+        <SharedProgressCircle />
         <bx-tag class="ml-2 text-xs text-gray-900" type="blue">
           <p>&nbsp;7 / 9 questions completed&nbsp;</p></bx-tag
         >
@@ -66,56 +67,5 @@ console.log(data);
         </bx-table>
       </bx-data-table>
     </div>
-
-    <!-- <div>
-      <span class="IBMPlexMono-Bold">Lorem ipsum dolor sit amet</span>
-    </div>
-    <div>
-      <span class="IBMPlexMono-BoldItalic">Lorem ipsum dolor sit amet</span>
-    </div>
-    <div>
-      <span class="IBMPlexMono-ExtraLight">Lorem ipsum dolor sit amet</span>
-    </div>
-    <div>
-      <span class="IBMPlexMono-ExtraLightItalic"
-        >Lorem ipsum dolor sit amet</span
-      >
-    </div>
-    <div>
-      <span class="IBMPlexMono-Italic">Lorem ipsum dolor sit amet</span>
-    </div>
-    <div>
-      <span class="IBMPlexMono-Light">Lorem ipsum dolor sit amet</span>
-    </div>
-    <div>
-      <span class="IBMPlexMono-LightItalic">Lorem ipsum dolor sit amet</span>
-    </div>
-    <div>
-      <span class="IBMPlexMono-Medium">Lorem ipsum dolor sit amet</span>
-    </div>
-    <div>
-      <span class="IBMPlexMono-MediumItalic">Lorem ipsum dolor sit amet</span>
-    </div>
-    <div>
-      <span class="IBMPlexMono-Regular">Lorem ipsum dolor sit amet</span>
-    </div>
-    <div>
-      <span class="IBMPlexMono-SemiBold">Lorem ipsum dolor sit amet</span>
-    </div>
-    <div>
-      <span class="IBMPlexMono-SemiBoldItalic">Lorem ipsum dolor sit amet</span>
-    </div>
-    <div>
-      <span class="IBMPlexMono-Text">Lorem ipsum dolor sit amet</span>
-    </div>
-    <div>
-      <span class="IBMPlexMono-TextItalic">Lorem ipsum dolor sit amet</span>
-    </div>
-    <div>
-      <span class="IBMPlexMono-Thin">Lorem ipsum dolor sit amet</span>
-    </div>
-    <div>
-      <span class="IBMPlexMono-ThinItalic">Lorem ipsum dolor sit amet</span>
-    </div> -->
   </div>
 </template>

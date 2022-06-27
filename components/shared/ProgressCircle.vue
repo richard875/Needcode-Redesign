@@ -1,8 +1,24 @@
+<script lang="ts">
+export default {
+  props: {
+    percentage: {
+      type: Number,
+      required: true,
+    },
+  },
+};
+</script>
+
 <template>
   <div class="percent">
     <svg>
       <circle cx="10" cy="10" r="8"></circle>
-      <circle cx="10" cy="10" r="8" style="--percent: 50"></circle>
+      <circle
+        cx="10"
+        cy="10"
+        r="8"
+        :style="{ '--percent': `${percentage}` }"
+      ></circle>
     </svg>
   </div>
 </template>

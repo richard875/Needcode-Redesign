@@ -42,10 +42,15 @@ export default {
 <template>
   <p class="mb-2 text-xl">{{ selectedQuestion.questionSet }}</p>
   <div class="mb-4 flex items-center">
-    <SharedProgressCircle />
+    <SharedProgressCircle
+      :percentage="Math.round((1 / selectedQuestion.questions.length) * 100)"
+    />
     <bx-tag class="ml-2 text-xs text-gray-900" type="blue">
-      <p>&nbsp;7 / 9 questions completed&nbsp;</p></bx-tag
-    >
+      <p>
+        &nbsp;1 / {{ selectedQuestion.questions.length }} questions
+        completed&nbsp;
+      </p>
+    </bx-tag>
   </div>
 
   <bx-data-table>

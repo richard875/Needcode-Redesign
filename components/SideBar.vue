@@ -94,7 +94,7 @@ export default {
     </div>
 
     <!-- Fixed at bottom -->
-    <div class="fixed bottom-0 w-80">
+    <div class="fixed bottom-0 w-80 sidebar-border">
       <!-- Divider above the question list -->
       <bx-side-nav-divider></bx-side-nav-divider>
 

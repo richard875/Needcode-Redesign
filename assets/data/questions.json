@@ -104,7 +104,7 @@
         "videoUrl": "https://www.youtube.com/watch?v=cQ1Oz4ckceM",
         "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/167-Two-Sum-II.py",
         "javaUrl": "https://github.com/neetcode-gh/leetcode/blob/main/java/167-Two-Sum-II.java",
-        "blindQuestion": true
+        "blindQuestion": false
       },
       {
         "question": "3Sum",
@@ -131,7 +131,7 @@
         "videoUrl": "https://www.youtube.com/watch?v=ZI2z5pq0TqA",
         "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/42-Trapping-Rain-Water.py",
         "javaUrl": "https://github.com/neetcode-gh/leetcode/blob/main/java/42-Trapping-Rain-Water.java",
-        "blindQuestion": true
+        "blindQuestion": false
       }
     ]
   },
@@ -756,6 +756,685 @@
         "videoUrl": "https://www.youtube.com/watch?v=Ph95IHmRp5M",
         "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/51-N-Queens.py",
         "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/backtracking/NQueens.java",
+        "blindQuestion": false
+      }
+    ]
+  },
+  {
+    "questionSet": "Graphs",
+    "questions": [
+      {
+        "question": "Number of Islands",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/number-of-islands/",
+        "videoUrl": "https://www.youtube.com/watch?v=pV2kpPD66nE",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/200-Number-of-Islands.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/grid/NumberOfIslands.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Clone Graph",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/clone-graph/",
+        "videoUrl": "https://www.youtube.com/watch?v=mQeF6bN8hMk",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/133-Clone-Graph.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/graphs/CloneGraph.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Max Area of Island",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/max-area-of-island/",
+        "videoUrl": "https://www.youtube.com/watch?v=iJGr1OtmH0c",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/695-Max-Area-of-Island.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Pacific Atlantic Waterflow",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+        "videoUrl": "https://www.youtube.com/watch?v=s-VkcjHqkGI",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/417-Pacific-Atlantic-Waterflow.py",
+        "javaUrl": "",
+        "blindQuestion": true
+      },
+      {
+        "question": "Surrounded Regions",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/surrounded-regions/",
+        "videoUrl": "https://www.youtube.com/watch?v=9z2BunfoZ5Y",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/130-Surrounded-Regions.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Rotting Oranges",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/rotting-oranges/",
+        "videoUrl": "https://www.youtube.com/watch?v=y704fEOx0s0",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/994-Rotting-Oranges.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/grid/RottenOrange.java",
+        "blindQuestion": false
+      },
+      {
+        "question": "Walls and Gates",
+        "difficulty": 1,
+        "leetcodeUrl": "https://www.lintcode.com/problem/663/",
+        "videoUrl": "https://www.youtube.com/watch?v=e69C6xhiSQE",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/286-Walls-and-Gates.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Course Schedule",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/course-schedule/",
+        "videoUrl": "https://www.youtube.com/watch?v=EgI5nU9etnU",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/207-Course-Schedule.py",
+        "javaUrl": "",
+        "blindQuestion": true
+      },
+      {
+        "question": "Course Schedule II",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/course-schedule-ii/",
+        "videoUrl": "https://www.youtube.com/watch?v=Akt3glAwyfY",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/210-Course-Schedule-II.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Redundant Connection",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/redundant-connection/",
+        "videoUrl": "https://www.youtube.com/watch?v=FXWRE67PLL0",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/684-Redundant-Connection.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Number of Connected Components in Graph",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
+        "videoUrl": "https://www.youtube.com/watch?v=8f1XPm4WOUc",
+        "pythonUrl": "",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/graphs/NumberOfConnectedComponents.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Graph Valid Tree",
+        "difficulty": 1,
+        "leetcodeUrl": "https://www.lintcode.com/problem/graph-valid-tree/description",
+        "videoUrl": "https://www.youtube.com/watch?v=bXsUuownnoQ",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/261-Graph-Valid-Tree.py",
+        "javaUrl": "",
+        "blindQuestion": true
+      },
+      {
+        "question": "Word Ladder",
+        "difficulty": 2,
+        "leetcodeUrl": "https://leetcode.com/problems/word-ladder/",
+        "videoUrl": "https://www.youtube.com/watch?v=h9iTnkgv05E",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/127-Word-Ladder.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/bfs/WordLadder.java",
+        "blindQuestion": false
+      }
+    ]
+  },
+  {
+    "questionSet": "Advanced Graphs",
+    "questions": [
+      {
+        "question": "Reconstruct Itinerary",
+        "difficulty": 2,
+        "leetcodeUrl": "https://leetcode.com/problems/reconstruct-itinerary/",
+        "videoUrl": "https://www.youtube.com/watch?v=ZyB_gQ8vqGA",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/332-Reconstruct-Itinerary.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dfs/ReconstructItinerary.java",
+        "blindQuestion": false
+      },
+      {
+        "question": "Min Cost to Connect all Points",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+        "videoUrl": "https://www.youtube.com/watch?v=f7JOBJIC-NA",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/1584-Min-Cost-to-Connect-all-Points.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Network Delay Time",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/network-delay-time/",
+        "videoUrl": "https://www.youtube.com/watch?v=EaphyqKU4PQ",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/743-Network-Delay-Time.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Swim in Rising Water",
+        "difficulty": 2,
+        "leetcodeUrl": "https://leetcode.com/problems/swim-in-rising-water/",
+        "videoUrl": "https://www.youtube.com/watch?v=amvrKlMLuGY",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/778-Swim-in-Rising-Water.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Alien Dictionary",
+        "difficulty": 2,
+        "leetcodeUrl": "https://www.lintcode.com/problem/892/",
+        "videoUrl": "https://www.youtube.com/watch?v=6kTZYvNNyps",
+        "pythonUrl": "",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/topologicalsort/AlienDictionary.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Cheapest Flights Within K Stops",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+        "videoUrl": "https://www.youtube.com/watch?v=5eIK3zUdYmE",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/787-Cheapest-Flights-within-K-stops.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      }
+    ]
+  },
+  {
+    "questionSet": "1-D Dynamic Programming",
+    "questions": [
+      {
+        "question": "Climbing Stairs",
+        "difficulty": 0,
+        "leetcodeUrl": "https://leetcode.com/problems/climbing-stairs/",
+        "videoUrl": "https://www.youtube.com/watch?v=Y0lT9Fck7qI",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/70-Climbing-Stairs.py",
+        "javaUrl": "",
+        "blindQuestion": true
+      },
+      {
+        "question": "Min Cost Climbing Stairs",
+        "difficulty": 0,
+        "leetcodeUrl": "https://leetcode.com/problems/min-cost-climbing-stairs/",
+        "videoUrl": "https://www.youtube.com/watch?v=ktmzAZWkEZ0",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/746-Min-Cost-Climbing-Stairs.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "House Robber",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/house-robber/",
+        "videoUrl": "https://www.youtube.com/watch?v=73r3KWiEvyk",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/198-House-Robber.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/HouseRobberOne.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "House Robber II",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/house-robber-ii/",
+        "videoUrl": "https://www.youtube.com/watch?v=rWAJCfYYOvM",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/213-House-Robber-II.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/HouseRobberII.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Longest Palindromic Substring",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/longest-palindromic-substring/",
+        "videoUrl": "https://www.youtube.com/watch?v=XYQecbcd6_c",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/5-Longest-Palindromic-Substring.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/LongestPalindromeSubStrings.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Palindromic Substrings",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/palindromic-substrings/",
+        "videoUrl": "https://www.youtube.com/watch?v=4RACzI5-du8",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/647-Palindromic-Substrings.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/PalindromeSubStrings.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Decode Ways",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/decode-ways/",
+        "videoUrl": "https://www.youtube.com/watch?v=6aEyTjOwlJU",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/91-Decode-ways.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/backtracking/DecodeWays.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Coin Change",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/coin-change/",
+        "videoUrl": "https://www.youtube.com/watch?v=H9bfqozjoqs",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/322-Coin-Change.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/knapsack/unbounded/CoinChange.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Maximum Product Subarray",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/maximum-product-subarray/",
+        "videoUrl": "https://www.youtube.com/watch?v=lXVy6YWFcRM",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/152-Maximum-Product-Subarray.py",
+        "javaUrl": "",
+        "blindQuestion": true
+      },
+      {
+        "question": "Word Break",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/word-break/",
+        "videoUrl": "https://www.youtube.com/watch?v=Sx9NNgInc3A",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/139-Word-Break.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/WordBreak.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Longest Increasing Subsequence",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/longest-increasing-subsequence/",
+        "videoUrl": "https://www.youtube.com/watch?v=cjWnW0hdF1Y",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/300-Longest-Increasing-Subsequence.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/LongestIncreasingSubSequence.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Partition Equal Subset Sum",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/partition-equal-subset-sum/",
+        "videoUrl": "https://www.youtube.com/watch?v=IsvocB5BJhw",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/416-Partition-Equal-Subset-Sum.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      }
+    ]
+  },
+  {
+    "questionSet": "2-D Dynamic Programming",
+    "questions": [
+      {
+        "question": "Unique Paths",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/unique-paths/",
+        "videoUrl": "https://www.youtube.com/watch?v=IlEsdxuD4lY",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/62-Unique-Paths.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/UniquePaths.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Longest Common Subsequence",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/longest-common-subsequence/",
+        "videoUrl": "https://www.youtube.com/watch?v=Ua0GhsJSlWM",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/1143-Longest-Common-Subsequence.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/LongestCommonSubSequence.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Best Time to Buy/Sell Stock With Cooldown",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
+        "videoUrl": "https://www.youtube.com/watch?v=I7j0F7AHpb8",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/309-Best-Time-To-Buy-and-Sell-Stock-With-Cooldown.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Coin Change II",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/coin-change-2/",
+        "videoUrl": "https://www.youtube.com/watch?v=Mjy4hd2xgrs",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/518-coin-change-2.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/knapsack/unbounded/CoinChangeII.java",
+        "blindQuestion": false
+      },
+      {
+        "question": "Target Sum",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/target-sum/",
+        "videoUrl": "https://www.youtube.com/watch?v=g0npyaQtAQM",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/494-Target-Sum.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/knapsack/zeroone/TargetSum.java",
+        "blindQuestion": false
+      },
+      {
+        "question": "Interleaving String",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/interleaving-string/",
+        "videoUrl": "https://www.youtube.com/watch?v=3Rw3p9LrgvE",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/97-Interleaving-Strings.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/memoize/StringInterleave.java",
+        "blindQuestion": false
+      },
+      {
+        "question": "Longest Increasing Path in a Matrix",
+        "difficulty": 2,
+        "leetcodeUrl": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+        "videoUrl": "https://www.youtube.com/watch?v=wCc_nd-GiEc",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/329-Longest-Increasing-Path-in-a-Matrix.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/memoize/LongestIncreasingPath.java",
+        "blindQuestion": false
+      },
+      {
+        "question": "Distinct Subsequences",
+        "difficulty": 2,
+        "leetcodeUrl": "https://leetcode.com/problems/distinct-subsequences/",
+        "videoUrl": "https://www.youtube.com/watch?v=-RDzMJ33nx8",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/115-Distinct-Subsequences.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/DistinctSubSequences.java",
+        "blindQuestion": false
+      },
+      {
+        "question": "Edit Distance",
+        "difficulty": 2,
+        "leetcodeUrl": "https://leetcode.com/problems/edit-distance/",
+        "videoUrl": "https://www.youtube.com/watch?v=XYi2-LPrwm4",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/72-Edit-Distance.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Burst Balloons",
+        "difficulty": 2,
+        "leetcodeUrl": "https://leetcode.com/problems/burst-balloons/",
+        "videoUrl": "https://www.youtube.com/watch?v=HAA8mgxlov8",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/312-Burst-Balloons.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/dynamicprogramming/BurstBalloons.java",
+        "blindQuestion": false
+      },
+      {
+        "question": "Regular Expression Matching",
+        "difficulty": 2,
+        "leetcodeUrl": "https://leetcode.com/problems/regular-expression-matching/",
+        "videoUrl": "https://www.youtube.com/watch?v=HAA8mgxlov8",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/10-Regular-Expression-Matching.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      }
+    ]
+  },
+  {
+    "questionSet": "Greedy",
+    "questions": [
+      {
+        "question": "Maximum Subarray",
+        "difficulty": 0,
+        "leetcodeUrl": "https://leetcode.com/problems/maximum-subarray/",
+        "videoUrl": "https://www.youtube.com/watch?v=5WZl3MMT0Eg",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/53-Maximum-Subarray.py",
+        "javaUrl": "https://github.com/neetcode-gh/leetcode/blob/main/java/53-Maximum-Subarray.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Jump Game",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/jump-game/",
+        "videoUrl": "https://www.youtube.com/watch?v=Yan0cv2cLy8",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/55-Jump-Game.py",
+        "javaUrl": "https://github.com/neetcode-gh/leetcode/blob/main/java/55-Jump-Game.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Jump Game II",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/jump-game-ii/",
+        "videoUrl": "https://www.youtube.com/watch?v=dJ7sWiOoK7g",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/45-Jump-Game-II.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Gas Station",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/gas-station/",
+        "videoUrl": "https://www.youtube.com/watch?v=lJwbPZGo05A",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/134-Gas-Station.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Hand of Straights",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/hand-of-straights/",
+        "videoUrl": "https://www.youtube.com/watch?v=amnrMCVd2YI",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/846-Hand-of-Straights.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Merge Triplets to Form Target Triplet",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/merge-triplets-to-form-target-triplet/",
+        "videoUrl": "https://youtu.be/kShkQLQZ9K4",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/1899-Merge-Triplets-to-Form-Target-Triplet.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Partition Labels",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/partition-labels/",
+        "videoUrl": "https://www.youtube.com/watch?v=B7m8UmZE-vw",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/763-Partition-Labels.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Valid Parenthesis String",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/valid-parenthesis-string/",
+        "videoUrl": "https://www.youtube.com/watch?v=QhPdNS143Qg",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/678-Valid-Parenthesis-String.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/greedy/ValidString.java",
+        "blindQuestion": false
+      }
+    ]
+  },
+  {
+    "questionSet": "Intervals",
+    "questions": [
+      {
+        "question": "Insert Interval",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/insert-interval/",
+        "videoUrl": "https://youtu.be/A8NUOmlwOlM",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/57-Insert-Interval.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/intervals/InsertInterval.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Merge Intervals",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/merge-intervals/",
+        "videoUrl": "https://youtu.be/44H3cEC2fFM",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/56-Merge-Intervals.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/intervals/MergeInterval.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Non-Overlapping Intervals",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/non-overlapping-intervals/",
+        "videoUrl": "https://youtu.be/nONCGxWoUfM",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/435-Non-Overlapping-Intervals.py",
+        "javaUrl": "https://github.com/neetcode-gh/leetcode/blob/main/java/435-Non-Overlapping-Intervals.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Meeting Rooms",
+        "difficulty": 0,
+        "leetcodeUrl": "https://www.lintcode.com/problem/920/",
+        "videoUrl": "https://youtu.be/PaJxqZVPhbg",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/252-Meeting-Rooms.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/intervals/MeetingRooms.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Meeting Rooms II",
+        "difficulty": 1,
+        "leetcodeUrl": "https://www.lintcode.com/problem/919/",
+        "videoUrl": "https://youtu.be/FdzJmTCVyJU",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/253-Meeting-Rooms-ii.py",
+        "javaUrl": "",
+        "blindQuestion": true
+      },
+      {
+        "question": "Minimum Interval to Include Each Query",
+        "difficulty": 2,
+        "leetcodeUrl": "https://leetcode.com/problems/minimum-interval-to-include-each-query/",
+        "videoUrl": "https://www.youtube.com/watch?v=5hQ5WWW5awQ",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/1851-Minimum-Interval-to-Include-Each-Query.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      }
+    ]
+  },
+  {
+    "questionSet": "Math & Geometry",
+    "questions": [
+      {
+        "question": "Rotate Image",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/rotate-image/",
+        "videoUrl": "https://www.youtube.com/watch?v=fMSJSS7eO1w",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/48-Rotate-Image.py",
+        "javaUrl": "https://github.com/neetcode-gh/leetcode/blob/main/java/48-Rotate-Image.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Spiral Matrix",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/spiral-matrix/",
+        "videoUrl": "https://youtu.be/BJnMZNwUk1M",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/54-Spiral-Matrix.py",
+        "javaUrl": "",
+        "blindQuestion": true
+      },
+      {
+        "question": "Set Matrix Zeroes",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/set-matrix-zeroes/",
+        "videoUrl": "https://www.youtube.com/watch?v=T41rL0L3Pnw",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/73-Set-Matrix-Zeroes.py",
+        "javaUrl": "",
+        "blindQuestion": true
+      },
+      {
+        "question": "Happy Number",
+        "difficulty": 0,
+        "leetcodeUrl": "https://leetcode.com/problems/happy-number/",
+        "videoUrl": "https://www.youtube.com/watch?v=ljz85bxOYJ0",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/202-Happy-Number.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/fastslowpointers/HappyNumber.java",
+        "blindQuestion": false
+      },
+      {
+        "question": "Plus One",
+        "difficulty": 0,
+        "leetcodeUrl": "https://leetcode.com/problems/plus-one/",
+        "videoUrl": "https://www.youtube.com/watch?v=jIaA8boiG1s",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/66-Plus-One.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Pow(x, n)",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/powx-n/",
+        "videoUrl": "https://www.youtube.com/watch?v=g9YQyYi4IQQ",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/50-Pow(x%2C%20n)",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Multiply Strings",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/multiply-strings/",
+        "videoUrl": "https://www.youtube.com/watch?v=1vZswirL8Y8",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/43-Multiply-Strings.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      },
+      {
+        "question": "Detect Squares",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/detect-squares/",
+        "videoUrl": "https://www.youtube.com/watch?v=bahebearrDc",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/2013-Detect-Squares.py",
+        "javaUrl": "",
+        "blindQuestion": false
+      }
+    ]
+  },
+  {
+    "questionSet": "Bit Manipulation",
+    "questions": [
+      {
+        "question": "Single Number",
+        "difficulty": 0,
+        "leetcodeUrl": "https://leetcode.com/problems/single-number/",
+        "videoUrl": "https://www.youtube.com/watch?v=qMPX1AOa83k",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/136-Single-Number.py",
+        "javaUrl": "https://github.com/ndesai15/coding-java/blob/master/src/com/coding/patterns/bitwiseXOR/SingleNumberXOR.java",
+        "blindQuestion": false
+      },
+      {
+        "question": "Number of 1 Bits",
+        "difficulty": 0,
+        "leetcodeUrl": "https://leetcode.com/problems/number-of-1-bits/",
+        "videoUrl": "https://youtu.be/5Km3utixwZs",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/191-Number-of-1-Bits.py",
+        "javaUrl": "",
+        "blindQuestion": true
+      },
+      {
+        "question": "Counting Bits",
+        "difficulty": 0,
+        "leetcodeUrl": "https://leetcode.com/problems/counting-bits/",
+        "videoUrl": "https://youtu.be/RyBM56RIWrM",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/338-Counting-Bits.py",
+        "javaUrl": "https://github.com/neetcode-gh/leetcode/blob/main/java/338-Counting-Bits.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Reverse Bits",
+        "difficulty": 0,
+        "leetcodeUrl": "https://leetcode.com/problems/reverse-bits/",
+        "videoUrl": "https://youtu.be/UcoN6UjAI64",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/190-Reverse-Bits.py",
+        "javaUrl": "",
+        "blindQuestion": true
+      },
+      {
+        "question": "Missing Number",
+        "difficulty": 0,
+        "leetcodeUrl": "https://leetcode.com/problems/missing-number/",
+        "videoUrl": "https://youtu.be/WnPLSRLSANE",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/268-Missing-Number.py",
+        "javaUrl": "https://github.com/neetcode-gh/leetcode/blob/main/java/268-Missing-Number.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Sum of Two Integers",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/sum-of-two-integers/",
+        "videoUrl": "https://youtu.be/gVUrDV4tZfY",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/371-Sum-of-Two-Integers.py",
+        "javaUrl": "https://github.com/neetcode-gh/leetcode/blob/main/java/371-Sum-of-Two-Integers.java",
+        "blindQuestion": true
+      },
+      {
+        "question": "Reverse Integer",
+        "difficulty": 1,
+        "leetcodeUrl": "https://leetcode.com/problems/reverse-integer/",
+        "videoUrl": "https://www.youtube.com/watch?v=HAgLH58IgJQ",
+        "pythonUrl": "https://github.com/neetcode-gh/leetcode/blob/main/7-Reverse-Integer.py",
+        "javaUrl": "",
         "blindQuestion": false
       }
     ]

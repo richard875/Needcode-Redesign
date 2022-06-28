@@ -1,6 +1,9 @@
 <script lang="ts">
+import Question from "src/models/question";
 import QuestionSet from "src/models/questionSet";
 import Difficulty from "../src/enum/difficulty";
+import CodeLanguage from "../src/enum/codeLanguage";
+import TagColor from "../helper/tagColor"
 
 export default {
   props: {
@@ -17,34 +20,35 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      Difficulty,
+      CodeLanguage,
+      selectedProblem: null as Question | null,
+      selectedCodeLanguage: null as CodeLanguage | null,
+      codeModalOpen: false as Boolean,
+    };
+  },
   computed: {
     selectedQuestion() {
       return this.questions[this.currentTab] as QuestionSet;
     },
   },
   methods: {
-    tagColor(difficulty: number) {
-      switch (difficulty) {
-        case Difficulty.Easy:
-          return "green";
-        case Difficulty.Medium:
-          return "blue";
-        case Difficulty.Hard:
-          return "magenta";
-        default:
-          return "gray";
-      }
-    },
+    TagColor,
     statusChecked(event: any, index: number) {
       console.log(event);
       console.log(index);
     },
-  },
-  data() {
-    return {
-      Difficulty,
-    };
-  },
+    triggerModal(codeProblem: Question, codeLanguage: CodeLanguage) {
+      this.selectedProblem = codeProblem;
+      this.selectedCodeLanguage = codeLanguage;
+      this.codeModalOpen = true;
+    },
+    gotoQuestion(url: string) {
+      window.open(url, "_blank");
+    }
+  }
 };
 </script>
 
@@ -81,29 +85,30 @@ export default {
         <bx-table-row
           v-for="(question, index) in selectedQuestion.questions"
           :key="index"
+          class="border-b border-gray-300"
         >
-          <!-- <bx-table-cell :class="{ 'question-attempted': currentTab == index }"> -->
+          <!-- Status column -->
           <bx-table-cell>
             <bx-checkbox
               @bx-checkbox-changed="statusChecked($event, index)"
             ></bx-checkbox>
           </bx-table-cell>
-          <bx-table-cell>
-            <a
-              :href="question.leetcodeUrl"
-              target="_blank"
-              class="text-blue-500 hover:text-blue-700"
-            >
-              {{ question.question }}
-            </a>
+          <!-- Question column -->
+          <bx-table-cell
+            class="cursor-pointer"
+            @click="gotoQuestion(question.leetcodeUrl)"
+          >
+            {{ question.question }}
           </bx-table-cell>
+          <!-- Difficulty column -->
           <bx-table-cell>
-            <bx-tag :type="tagColor(question.difficulty)">
+            <bx-tag :type="TagColor(question.difficulty)">
               <span class="select-none">
                 {{ Difficulty[question.difficulty] }}
               </span>
             </bx-tag>
           </bx-table-cell>
+          <!-- Video column -->
           <bx-table-cell>
             <bx-btn
               v-if="question.videoUrl !== ''"
@@ -138,15 +143,22 @@ export default {
               <span class="text-xs">Video coming soon</span>
             </bx-btn>
           </bx-table-cell>
+          <!-- Code column -->
           <bx-table-cell>
             <div class="flex">
+              <!-- Python -->
               <bx-tooltip-icon
                 v-if="question.pythonUrl !== ''"
                 alignment="center"
                 body-text="Python"
                 direction="bottom"
               >
-                <bx-btn kind="secondary" icon-layout="" size="sm">
+                <bx-btn
+                  kind="secondary"
+                  icon-layout=""
+                  size="sm"
+                  @click="triggerModal(question, CodeLanguage.Python)"
+                >
                   <svg
                     class="svg-inline--fa fa-python"
                     aria-hidden="true"
@@ -167,6 +179,7 @@ export default {
                   </svg>
                 </bx-btn>
               </bx-tooltip-icon>
+              <!-- Java -->
               <bx-tooltip-icon
                 v-if="question.javaUrl !== ''"
                 class="ml-3"
@@ -202,10 +215,24 @@ export default {
       </bx-table-body>
     </bx-table>
   </bx-data-table>
+
+  <client-only placeholder="Loading...">
+    <SharedCodePopup
+      :selected-question="selectedProblem"
+      :selected-code-language="selectedCodeLanguage"
+      :code-modal-open="codeModalOpen"
+      @closeModal="codeModalOpen = false"
+    />
+  </client-only>
 </template>
 
 <style lang="scss" scoped>
 .question-attempted {
   border-left: 5px solid #0f62fe !important;
+}
+
+bx-table-cell {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 </style>

@@ -28,7 +28,7 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
   build: {
     transpile: ["vaadin"],
   },

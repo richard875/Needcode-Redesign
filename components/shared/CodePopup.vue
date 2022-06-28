@@ -2,7 +2,7 @@
 import Prism from "prismjs";
 import "../../src/style/code/prism-google-theme.css"; // Google code snippet theme
 import "prismjs/components/prism-python";
-import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-java";
 import "prismjs/plugins/file-highlight/prism-file-highlight.js";
 import "prismjs/plugins/line-numbers/prism-line-numbers.js";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
@@ -17,11 +17,11 @@ import CodeLanguage from "../../src/enum/codeLanguage";
 export default {
   props: {
     selectedQuestion: {
-      type: Object, // Question type
+      type: [ Object, null ], // Question type
       required: true,
     },
     selectedCodeLanguage: {
-      type: Number, // CodeLanguage enum (with number)
+      type: [ Number, null ], // CodeLanguage enum (with number)
       required: true,
     },
     codeModalOpen: {
@@ -42,22 +42,29 @@ export default {
   },
   watch: {
     selectedQuestion(newValue) {
-        if (newValue.pythonUrl !== "" && newValue.pythonUrl !== null) {
-            this.rawPythonUrl = this.GithubCodeLink(newValue.pythonUrl);
-            this.pythonUrl = newValue.pythonUrl;
-            this.componentKey += 1; // Force re-rendering of component by plusing 1 every cycle
-        }
+        if (newValue.pythonUrl !== "" && newValue.pythonUrl !== null) this.rawPythonUrl = this.GithubCodeLink(newValue.pythonUrl);
+        if (newValue.javaUrl !== "" && newValue.javaUrl !== null) this.rawJavaUrl = this.GithubCodeLink(newValue.javaUrl);
+        this.componentKey += 1; // Force re-rendering of component by plusing 1 every cycle
+    },
+    selectedCodeLanguage(newValue) {
+        this.componentKey += 1; // Force re-rendering of component by plusing 1 every cycle
     }
   },
   data() {
     return {
       Difficulty,
       CodeLanguage,
-      pythonUrl: "",
       rawPythonUrl: "",
+      rawJavaUrl: "",
       componentKey: 0, // To force re-rendering of the code snippet
     };
   },
+  computed: {
+    githubUrl() {
+      if (this.selectedQuestion) return this.selectedCodeLanguage === CodeLanguage.Python ? this.selectedQuestion.pythonUrl : this.selectedQuestion.javaUrl;
+      return "";
+    }
+  }
 };
 </script>
 
@@ -80,7 +87,7 @@ export default {
           :body-text="CodeLanguage[selectedCodeLanguage]"
           direction="right"
         >
-          <bx-tag v-if="selectedQuestion" class="ml-1" type="cyan">
+          <bx-tag v-if="selectedQuestion" type="cyan">
             <font-awesome-icon
               size="lg"
               :icon="`fa-brands fa-${
@@ -95,7 +102,6 @@ export default {
           {{ selectedQuestion.question }}
         </bx-modal-heading>
         <bx-tooltip-icon
-          v-if="selectedQuestion.blindQuestion"
           class="ml-2 flex items-center justify-center"
           alignment="center"
           body-text="This problem is in Blind 75"
@@ -122,16 +128,22 @@ export default {
       <p>Solution:</p>
       <pre
         ref="code"
-        language="python"
+        :language="
+          selectedCodeLanguage === CodeLanguage.Python ? 'python' : 'java'
+        "
         class="line-numbers"
-        :data-src="rawPythonUrl"
+        :data-src="
+          selectedCodeLanguage === CodeLanguage.Python
+            ? rawPythonUrl
+            : rawJavaUrl
+        "
       ></pre>
     </bx-modal-body>
     <bx-modal-footer>
       <bx-modal-footer-button kind="secondary" data-modal-close>
         Close
       </bx-modal-footer-button>
-      <bx-modal-footer-button kind="primary" :href="pythonUrl" target="_blank">
+      <bx-modal-footer-button kind="primary" :href="githubUrl" target="_blank">
         <span>
           <font-awesome-icon icon="fa-brands fa-github" size="lg" />
           &nbsp;View in GitHub&nbsp;

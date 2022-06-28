@@ -187,7 +187,12 @@ export default {
                 body-text="Java"
                 direction="bottom"
               >
-                <bx-btn kind="secondary" icon-layout="condensed" size="sm">
+                <bx-btn
+                  kind="secondary"
+                  icon-layout=""
+                  size="sm"
+                  @click="triggerModal(question, CodeLanguage.Java)"
+                >
                   <svg
                     class="svg-inline--fa fa-java"
                     aria-hidden="true"

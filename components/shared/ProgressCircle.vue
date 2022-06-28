@@ -36,6 +36,7 @@ svg {
 }
 
 svg circle {
+  transition: 0.35s stroke-dashoffset;
   fill: none;
   stroke: #e0e0e0;
   stroke-width: 2;

@@ -42,11 +42,11 @@ export default {
   },
   watch: {
     selectedQuestion(newValue) {
-        if (newValue.pythonUrl !== "" && newValue.pythonUrl !== null) this.rawPythonUrl = this.GithubCodeLink(newValue.pythonUrl);
-        if (newValue.javaUrl !== "" && newValue.javaUrl !== null) this.rawJavaUrl = this.GithubCodeLink(newValue.javaUrl);
+        if (newValue) this.rawUrl = this.selectedCodeLanguage === CodeLanguage.Python ? this.GithubCodeLink(newValue.pythonUrl) : this.GithubCodeLink(newValue.javaUrl);
         this.componentKey += 1; // Force re-rendering of component by plusing 1 every cycle
     },
     selectedCodeLanguage(newValue) {
+        this.rawUrl = newValue === CodeLanguage.Python ? this.GithubCodeLink(this.selectedQuestion.pythonUrl) : this.GithubCodeLink(this.selectedQuestion.javaUrl);
         this.componentKey += 1; // Force re-rendering of component by plusing 1 every cycle
     }
   },
@@ -54,8 +54,7 @@ export default {
     return {
       Difficulty,
       CodeLanguage,
-      rawPythonUrl: "",
-      rawJavaUrl: "",
+      rawUrl: "",
       componentKey: 0, // To force re-rendering of the code snippet
     };
   },
@@ -90,9 +89,9 @@ export default {
           <bx-tag v-if="selectedQuestion" type="cyan">
             <font-awesome-icon
               size="lg"
-              :icon="`fa-brands fa-${
-                selectedCodeLanguage === CodeLanguage.Python ? 'python' : 'java'
-              }`"
+              :icon="`fa-brands fa-${CodeLanguage[
+                selectedCodeLanguage
+              ].toLowerCase()}`"
             />
           </bx-tag>
         </bx-tooltip-icon>
@@ -128,15 +127,9 @@ export default {
       <p>Solution:</p>
       <pre
         ref="code"
-        :language="
-          selectedCodeLanguage === CodeLanguage.Python ? 'python' : 'java'
-        "
+        :language="CodeLanguage[selectedCodeLanguage].toLowerCase()"
         class="line-numbers"
-        :data-src="
-          selectedCodeLanguage === CodeLanguage.Python
-            ? rawPythonUrl
-            : rawJavaUrl
-        "
+        :data-src="rawUrl"
       ></pre>
     </bx-modal-body>
     <bx-modal-footer>

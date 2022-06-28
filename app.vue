@@ -18,13 +18,14 @@ export default {
       currentTab: 0 as Number,
       blindQuestions: false as Boolean,
       questions: DeepCopy(data) as Array<QuestionSet>,
+      totalCompletedQuestions: 0 as Number,
     };
   },
   methods: {
-    updateCurrentTab(index: number) {
+    emitUpdateCurrentTab(index: number) {
       this.currentTab = index;
     },
-    updateBlindQuestions(blindQuestions: boolean) {
+    emitUpdateBlindQuestions(blindQuestions: boolean) {
       this.blindQuestions = blindQuestions;
       this.questions = DeepCopy(data) as Array<QuestionSet>;
 
@@ -35,6 +36,9 @@ export default {
           );
         });
       }
+    },
+    emitTotalCompletedQuestions(questions: number) {
+      this.totalCompletedQuestions = questions;
     },
   },
   head() {
@@ -65,8 +69,9 @@ export default {
     <!-- Left side -->
     <SideBar
       :questions="questions"
-      @updateCurrentTab="updateCurrentTab"
-      @updateQuestionMode="updateBlindQuestions"
+      :total-completed-questions="totalCompletedQuestions"
+      @updateCurrentTab="emitUpdateCurrentTab"
+      @updateQuestionMode="emitUpdateBlindQuestions"
     />
 
     <!-- Right side -->
@@ -75,6 +80,7 @@ export default {
         :questions="questions"
         :current-tab="currentTab"
         :blind-questions="blindQuestions"
+        @totalCompletedQuestion="emitTotalCompletedQuestions"
       />
     </div>
   </div>

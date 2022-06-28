@@ -149,6 +149,7 @@ export default {
               <!-- Python -->
               <bx-tooltip-icon
                 v-if="question.pythonUrl !== ''"
+                class="mr-3"
                 alignment="center"
                 body-text="Python"
                 direction="bottom"
@@ -182,7 +183,6 @@ export default {
               <!-- Java -->
               <bx-tooltip-icon
                 v-if="question.javaUrl !== ''"
-                class="ml-3"
                 alignment="center"
                 body-text="Java"
                 direction="bottom"

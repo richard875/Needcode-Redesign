@@ -5,9 +5,8 @@ export default defineNuxtConfig({
   // app
   app: {
     head: {
-      title: "A better way to prepare for coding interviews - Neetcode.io",
-      titleTemplate:
-        "%s - A better way to prepare for coding interviews - Neetcode.io",
+      title: "A better way to prepare for coding interviews",
+      titleTemplate: "%s - Neetcode.io",
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         // {

@@ -121,15 +121,17 @@ export default {
         {{ selectedQuestion.questions.length }} questions completed&nbsp;
       </p>
     </bx-tag>
-    <Transition name="fade">
-      <bx-tag
-        class="ml-1 text-xs text-gray-900"
-        type="green"
-        v-if="setCompletedQuestion === selectedQuestion.questions.length"
-      >
-        All Completed
-      </bx-tag>
-    </Transition>
+    <bx-tag
+      :class="[
+        setCompletedQuestion === selectedQuestion.questions.length
+          ? 'opacity-100'
+          : 'opacity-0',
+        'ml-1 text-xs text-gray-900 transition-all',
+      ]"
+      type="green"
+    >
+      All Completed
+    </bx-tag>
   </div>
 
   <bx-data-table>
@@ -170,15 +172,15 @@ export default {
           >
             <div class="flex items-center">
               {{ question.question }}
-              <Transition name="fade">
-                <bx-tag
-                  v-if="checked(question.leetcodeUrl)"
-                  type="purple"
-                  class="ml-2"
-                >
-                  <font-awesome-icon icon="fa-solid fa-check" />
-                </bx-tag>
-              </Transition>
+              <bx-tag
+                type="purple"
+                :class="[
+                  checked(question.leetcodeUrl) ? 'opacity-100' : 'opacity-0',
+                  'ml-2 transition-all',
+                ]"
+              >
+                <font-awesome-icon icon="fa-solid fa-check" />
+              </bx-tag>
             </div>
           </bx-table-cell>
           <!-- Difficulty column -->
@@ -316,18 +318,5 @@ export default {
 bx-table-cell {
   padding-top: 10px;
   padding-bottom: 10px;
-}
-
-.fade-enter-active {
-  transition: all 0.1s ease-out;
-}
-
-.fade-leave-active {
-  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>

@@ -7,7 +7,11 @@ export default {
     questions: {
       type: Array<QuestionSet>,
       required: true
-    }
+    },
+    totalCompletedQuestions: {
+      type: Number,
+      required: true
+    },
   },
   data() {
     return {
@@ -51,11 +55,17 @@ export default {
       <div class="p-3 select-none">
         <div class="mb-1 ml-2 flex items-center">
           <SharedProgressCircle
-            :percentage="Math.round((10 / totalNumberOfQuestion) * 100)"
+            :percentage="
+              Math.round(
+                (totalCompletedQuestions / totalNumberOfQuestion) * 100
+              )
+            "
           />
           <bx-tag class="ml-2 text-xs text-gray-900" type="blue">
             <p>
-              &nbsp;10 / {{ totalNumberOfQuestion }} questions completed&nbsp;
+              &nbsp;{{ totalCompletedQuestions }}
+              &nbsp;/&nbsp;
+              {{ totalNumberOfQuestion }}&nbsp; questions completed
             </p>
           </bx-tag>
         </div>

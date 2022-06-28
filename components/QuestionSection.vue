@@ -41,12 +41,23 @@ export default {
       return this.questions[this.currentTab] as QuestionSet;
     },
     setCompletedQuestion() {
-      if (this.currentSavedQuestions && this.currentSavedQuestions[this.selectedQuestion.questionSet])
-        return Object.keys(this.currentSavedQuestions[this.selectedQuestion.questionSet]).length;
+      if (this.currentSavedQuestions && this.currentSavedQuestions[this.selectedQuestion.questionSet]) {
+        let numberOfCompletedQuestion = 0;
+
+        Object.entries(this.currentSavedQuestions[this.selectedQuestion.questionSet]).forEach((item) => {
+          if (this.blindQuestions) {
+            if (item[1] == 1) numberOfCompletedQuestion++;
+          } else {
+            numberOfCompletedQuestion++;
+          }
+        });
+
+        return numberOfCompletedQuestion;
+      }
       return 0;
     },
     totalCompletedQuestion() {
-      if (this.currentSavedQuestions) return NestedObjectLength(this.currentSavedQuestions);
+      if (this.currentSavedQuestions) return NestedObjectLength(this.currentSavedQuestions, this.blindQuestions);
       return 0;
     }
   },
@@ -64,20 +75,16 @@ export default {
     Goto,
     TagColor,
     NestedObjectLength,
-    statusChecked(event: any, questionSet: string, questionKey: string) {
+    statusChecked(event: any, questionSet: string, questionKey: string, blindQuestion: boolean) {
       const neetCodeLocalStorage = localStorage.getItem(NEETCODE_LOCALSTORAGE_QUESTION_LIST);
       let neetCodeLocalStorageObject = JSON.parse(neetCodeLocalStorage);
 
       if (neetCodeLocalStorageObject) {
-        if (neetCodeLocalStorageObject[questionSet] && neetCodeLocalStorageObject[questionSet][questionKey]) {
+        if (neetCodeLocalStorageObject[questionSet] && (neetCodeLocalStorageObject[questionSet][questionKey] != null)) {
           delete neetCodeLocalStorageObject[questionSet][questionKey];
         } else {
-          if (neetCodeLocalStorageObject[questionSet]) {
-            neetCodeLocalStorageObject[questionSet][questionKey] = true;
-          } else {
-            neetCodeLocalStorageObject[questionSet] = {};
-            neetCodeLocalStorageObject[questionSet][questionKey] = true;
-          }
+          if (!neetCodeLocalStorageObject[questionSet]) neetCodeLocalStorageObject[questionSet] = {};
+          neetCodeLocalStorageObject[questionSet][questionKey] = blindQuestion ? 1 : 2;
         }
       }
 
@@ -150,7 +157,8 @@ export default {
                 statusChecked(
                   $event,
                   selectedQuestion.questionSet,
-                  question.leetcodeUrl
+                  question.leetcodeUrl,
+                  question.blindQuestion
                 )
               "
             ></bx-checkbox>

@@ -148,7 +148,7 @@ export default {
           </bx-table-cell>
           <!-- Question column -->
           <bx-table-cell
-            class="cursor-pointer"
+            class="cursor-pointer pr-0"
             @click="Goto(question.leetcodeUrl)"
           >
             <div class="flex items-center">

@@ -14,3 +14,15 @@ const TagColor = (difficulty: number) => {
 };
 
 export default TagColor;
+
+// Available colors:
+// red
+// magenta
+// purple
+// blue
+// cyan
+// teal
+// green
+// gray
+// cool-gray
+// warm-gray

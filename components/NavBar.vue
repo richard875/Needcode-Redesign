@@ -1,3 +1,20 @@
+<script lang="ts">
+import social from "assets/data/social.json";
+import Social from "src/models/social";
+import Goto from "../helper/goto";
+
+export default {
+  data() {
+    return {
+      socialLinks: social as Social,
+    };
+  },
+  methods: {
+    Goto,
+  },
+};
+</script>
+
 <template>
   <div
     class="fixed w-full h-12 pl-3 navbar flex items-center justify-between z-50 select-none"
@@ -22,6 +39,7 @@
         alignment="center"
         body-text="Patreon"
         direction="bottom"
+        @click="Goto(socialLinks.patreon)"
       >
         <font-awesome-icon icon="fa-solid fa-heart" inverse />
       </bx-tooltip-icon>
@@ -30,6 +48,7 @@
         alignment="center"
         body-text="YouTube"
         direction="bottom"
+        @click="Goto(socialLinks.youtube)"
       >
         <font-awesome-icon icon="fa-brands fa-youtube" inverse />
       </bx-tooltip-icon>
@@ -38,6 +57,7 @@
         alignment="center"
         body-text="Discord"
         direction="bottom"
+        @click="Goto(socialLinks.discord)"
       >
         <font-awesome-icon icon="fa-brands fa-discord" inverse />
       </bx-tooltip-icon>
@@ -46,6 +66,7 @@
         alignment="center"
         body-text="Twitter"
         direction="left"
+        @click="Goto(socialLinks.twitter)"
       >
         <font-awesome-icon icon="fa-brands fa-twitter" inverse />
       </bx-tooltip-icon>

@@ -37,48 +37,52 @@ export default {
 </script>
 
 <template>
-  <div class="fixed w-80 top-12 bottom-0 left-0 bg-white sidebar">
-    <bx-search
-      label-text="Search"
-      placeholder="Search Questions"
-      size="xl"
-    ></bx-search>
+  <div
+    class="fixed w-80 mb-44 top-12 bottom-0 left-0 bg-white overflow-y-auto sidebar sidebar-border"
+  >
+    <div class="fixed top-12 w-80 z-50 bg-white sidebar-border">
+      <bx-search
+        label-text="Search"
+        placeholder="Search Questions"
+        size="xl"
+      ></bx-search>
 
-    <!-- Tags -->
-    <div class="p-3 select-none">
-      <div class="mb-1 ml-2 flex items-center">
-        <SharedProgressCircle
-          :percentage="Math.round((10 / totalNumberOfQuestion) * 100)"
-        />
-        <bx-tag class="ml-2 text-xs text-gray-900" type="blue">
-          <p>
-            &nbsp;10 / {{ totalNumberOfQuestion }} questions completed&nbsp;
-          </p>
+      <!-- Tags -->
+      <div class="p-3 select-none">
+        <div class="mb-1 ml-2 flex items-center">
+          <SharedProgressCircle
+            :percentage="Math.round((10 / totalNumberOfQuestion) * 100)"
+          />
+          <bx-tag class="ml-2 text-xs text-gray-900" type="blue">
+            <p>
+              &nbsp;10 / {{ totalNumberOfQuestion }} questions completed&nbsp;
+            </p>
+          </bx-tag>
+        </div>
+
+        <bx-tag
+          class="cursor-pointer"
+          :class="{ 'bg-gray-800 text-white': blindQuestions }"
+          type="gray"
+          @click="changeQuestionMode(true)"
+        >
+          &nbsp;Blind 75&nbsp;
+        </bx-tag>
+        <bx-tag
+          class="cursor-pointer"
+          :class="{ 'bg-gray-800 text-white': !blindQuestions }"
+          type="gray"
+          @click="changeQuestionMode(false)"
+        >
+          &nbsp;Neetcode 150&nbsp;
         </bx-tag>
       </div>
 
-      <bx-tag
-        class="cursor-pointer"
-        :class="{ 'bg-gray-800 text-white': blindQuestions }"
-        type="gray"
-        @click="changeQuestionMode(true)"
-      >
-        &nbsp;Blind 75&nbsp;
-      </bx-tag>
-      <bx-tag
-        class="cursor-pointer"
-        :class="{ 'bg-gray-800 text-white': !blindQuestions }"
-        type="gray"
-        @click="changeQuestionMode(false)"
-      >
-        &nbsp;Neetcode 150&nbsp;
-      </bx-tag>
+      <!-- Divider above the question list -->
+      <bx-side-nav-divider class="mt-0"></bx-side-nav-divider>
     </div>
 
-    <!-- Divider -->
-    <bx-side-nav-divider class="mt-0"></bx-side-nav-divider>
-
-    <div style="height: 70%; overflow: auto">
+    <div style="margin-top: 150px">
       <bx-side-nav-link
         v-for="(question, index) in questions"
         :key="index"
@@ -91,7 +95,10 @@ export default {
 
     <!-- Fixed at bottom -->
     <div class="fixed bottom-0 w-80">
-      <div class="p-3 text-xs leading-6 text-gray-700">
+      <!-- Divider above the question list -->
+      <bx-side-nav-divider></bx-side-nav-divider>
+
+      <div class="p-3 !pt-1 text-xs leading-6 text-gray-700">
         <p>
           Made with &#9829; in
           <a
@@ -186,8 +193,6 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar {
-  border-right: 1px solid #e0e0e0;
-
   bx-side-nav-link {
     border-right: 5px solid transparent;
 
@@ -200,6 +205,10 @@ export default {
     border-right-color: #2e62fe;
     background-color: #e9e9e9 !important;
   }
+}
+
+.sidebar-border {
+  border-right: 1px solid #e0e0e0;
 }
 
 // YouTube player in the popup modal

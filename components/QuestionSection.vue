@@ -5,8 +5,13 @@ import Difficulty from "../src/enum/difficulty";
 import CodeLanguage from "../src/enum/codeLanguage";
 import Goto from "../helper/goto";
 import TagColor from "../helper/tagColor";
+import NestedObjectLength from "../helper/nestedObjectLength";
+
+// Const value
+const NEETCODE_LOCALSTORAGE_QUESTION_LIST = "neetcode_localstorage_question_list";
 
 export default {
+  emits: ["totalCompletedQuestion"],
   props: {
     questions: {
       type: Array<QuestionSet>,
@@ -28,26 +33,66 @@ export default {
       selectedProblem: null as Question | null,
       selectedCodeLanguage: null as CodeLanguage | null,
       codeModalOpen: false as Boolean,
+      currentSavedQuestions: null as Object | null,
     };
   },
   computed: {
     selectedQuestion() {
       return this.questions[this.currentTab] as QuestionSet;
     },
+    setCompletedQuestion() {
+      if (this.currentSavedQuestions && this.currentSavedQuestions[this.selectedQuestion.questionSet])
+        return Object.keys(this.currentSavedQuestions[this.selectedQuestion.questionSet]).length;
+      return 0;
+    },
+    totalCompletedQuestion() {
+      if (this.currentSavedQuestions) return NestedObjectLength(this.currentSavedQuestions);
+      return 0;
+    }
+  },
+  watch: {
+    totalCompletedQuestion(newValue: number) {
+      this.$emit("totalCompletedQuestion", newValue);
+    },
+  },
+  mounted() {
+    const neetCodeLocalStorage = localStorage.getItem(NEETCODE_LOCALSTORAGE_QUESTION_LIST);
+    if (!neetCodeLocalStorage) localStorage.setItem(NEETCODE_LOCALSTORAGE_QUESTION_LIST, JSON.stringify({}));
+    this.currentSavedQuestions = JSON.parse(neetCodeLocalStorage);;
   },
   methods: {
     Goto,
     TagColor,
-    statusChecked(event: any, index: number) {
-      localStorage.setItem('storedData', "hello");
+    NestedObjectLength,
+    statusChecked(event: any, questionSet: string, questionKey: string) {
+      const neetCodeLocalStorage = localStorage.getItem(NEETCODE_LOCALSTORAGE_QUESTION_LIST);
+      let neetCodeLocalStorageObject = JSON.parse(neetCodeLocalStorage);
 
-      console.log(event);
-      console.log(index);
+      if (neetCodeLocalStorageObject) {
+        if (neetCodeLocalStorageObject[questionSet] && neetCodeLocalStorageObject[questionSet][questionKey]) {
+          delete neetCodeLocalStorageObject[questionSet][questionKey];
+        } else {
+          if (neetCodeLocalStorageObject[questionSet]) {
+            neetCodeLocalStorageObject[questionSet][questionKey] = true;
+          } else {
+            neetCodeLocalStorageObject[questionSet] = {};
+            neetCodeLocalStorageObject[questionSet][questionKey] = true;
+          }
+        }
+      }
+
+      this.currentSavedQuestions = neetCodeLocalStorageObject;
+      localStorage.setItem(NEETCODE_LOCALSTORAGE_QUESTION_LIST, JSON.stringify(neetCodeLocalStorageObject));
     },
     triggerModal(codeProblem: Question, codeLanguage: CodeLanguage) {
       this.selectedProblem = codeProblem;
       this.selectedCodeLanguage = codeLanguage;
       this.codeModalOpen = true;
+    },
+    checked(leetcodeUrl: string) {
+      return this.currentSavedQuestions &&
+             this.currentSavedQuestions[this.selectedQuestion.questionSet] &&
+             this.currentSavedQuestions[this.selectedQuestion.questionSet][leetcodeUrl];
     }
   }
 };
@@ -57,12 +102,16 @@ export default {
   <p class="mb-2 text-xl">{{ selectedQuestion.questionSet }}</p>
   <div class="mb-4 flex items-center">
     <SharedProgressCircle
-      :percentage="Math.round((1 / selectedQuestion.questions.length) * 100)"
+      :percentage="
+        Math.round(
+          (setCompletedQuestion / selectedQuestion.questions.length) * 100
+        )
+      "
     />
     <bx-tag class="ml-2 text-xs text-gray-900" type="blue">
       <p>
-        &nbsp;1 / {{ selectedQuestion.questions.length }} questions
-        completed&nbsp;
+        &nbsp;{{ setCompletedQuestion }} /
+        {{ selectedQuestion.questions.length }} questions completed&nbsp;
       </p>
     </bx-tag>
   </div>
@@ -71,11 +120,7 @@ export default {
     <bx-table>
       <bx-table-head>
         <bx-table-header-row>
-          <bx-table-header-cell
-            class="pr-0"
-            style="border-left: 5px solid #e0e0e0"
-            >Status</bx-table-header-cell
-          >
+          <bx-table-header-cell class="pr-0">Status</bx-table-header-cell>
           <bx-table-header-cell>Problem</bx-table-header-cell>
           <bx-table-header-cell>Difficulty</bx-table-header-cell>
           <bx-table-header-cell>Video Solution</bx-table-header-cell>
@@ -91,7 +136,14 @@ export default {
           <!-- Status column -->
           <bx-table-cell>
             <bx-checkbox
-              @bx-checkbox-changed="statusChecked($event, index)"
+              :checked="checked(question.leetcodeUrl)"
+              @bx-checkbox-changed="
+                statusChecked(
+                  $event,
+                  selectedQuestion.questionSet,
+                  question.leetcodeUrl
+                )
+              "
             ></bx-checkbox>
           </bx-table-cell>
           <!-- Question column -->
@@ -99,7 +151,16 @@ export default {
             class="cursor-pointer"
             @click="Goto(question.leetcodeUrl)"
           >
-            {{ question.question }}
+            <div class="flex items-center">
+              {{ question.question }}
+              <bx-tag
+                v-if="checked(question.leetcodeUrl)"
+                type="purple"
+                class="ml-2"
+              >
+                <span class="select-none">Completed</span>
+              </bx-tag>
+            </div>
           </bx-table-cell>
           <!-- Difficulty column -->
           <bx-table-cell>
@@ -233,10 +294,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.question-attempted {
-  border-left: 5px solid #0f62fe !important;
-}
-
 bx-table-cell {
   padding-top: 10px;
   padding-bottom: 10px;

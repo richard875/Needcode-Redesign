@@ -3,7 +3,8 @@ import Question from "src/models/question";
 import QuestionSet from "src/models/questionSet";
 import Difficulty from "../src/enum/difficulty";
 import CodeLanguage from "../src/enum/codeLanguage";
-import TagColor from "../helper/tagColor"
+import Goto from "../helper/goto";
+import TagColor from "../helper/tagColor";
 
 export default {
   props: {
@@ -35,8 +36,11 @@ export default {
     },
   },
   methods: {
+    Goto,
     TagColor,
     statusChecked(event: any, index: number) {
+      localStorage.setItem('storedData', "hello");
+
       console.log(event);
       console.log(index);
     },
@@ -44,9 +48,6 @@ export default {
       this.selectedProblem = codeProblem;
       this.selectedCodeLanguage = codeLanguage;
       this.codeModalOpen = true;
-    },
-    gotoQuestion(url: string) {
-      window.open(url, "_blank");
     }
   }
 };
@@ -96,7 +97,7 @@ export default {
           <!-- Question column -->
           <bx-table-cell
             class="cursor-pointer"
-            @click="gotoQuestion(question.leetcodeUrl)"
+            @click="Goto(question.leetcodeUrl)"
           >
             {{ question.question }}
           </bx-table-cell>

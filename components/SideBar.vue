@@ -71,16 +71,20 @@ export default {
         </div>
 
         <bx-tag
-          class="cursor-pointer"
-          :class="{ 'bg-gray-800 text-white': blindQuestions }"
+          :class="[
+            { 'bg-gray-800 text-white': blindQuestions },
+            'cursor-pointer',
+          ]"
           type="gray"
           @click="changeQuestionMode(true)"
         >
           &nbsp;Blind 75&nbsp;
         </bx-tag>
         <bx-tag
-          class="cursor-pointer"
-          :class="{ 'bg-gray-800 text-white': !blindQuestions }"
+          :class="[
+            { 'bg-gray-800 text-white': !blindQuestions },
+            'cursor-pointer',
+          ]"
           type="gray"
           @click="changeQuestionMode(false)"
         >

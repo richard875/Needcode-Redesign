@@ -2,6 +2,21 @@
 
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
+## Stack
+
+Built with Nuxt 3 RC
+
+``` bash
+fontawesome
+IBM Carbon design
+tailwindCSS
+Vue 3
+Nuxt 3
+lit.dev
+prism
+sass
+```
+
 ## Setup
 
 Make sure to install the dependencies:

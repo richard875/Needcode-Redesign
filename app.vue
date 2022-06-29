@@ -1,12 +1,12 @@
 <script lang="ts">
-import "carbon-web-components/es/components/tooltip/index.js";
-import "carbon-web-components/es/components/search/index.js";
-import "carbon-web-components/es/components/button/index.js";
-import "carbon-web-components/es/components/ui-shell/index.js";
-import "carbon-web-components/es/components/tag/index.js";
-import "carbon-web-components/es/components/data-table/index.js";
-import "carbon-web-components/es/components/checkbox/index.js";
-import "carbon-web-components/es/components/modal/index.js";
+import "https://1.www.s81c.com/common/carbon/web-components/version/v1.21.0/tooltip.min.js";
+import "https://1.www.s81c.com/common/carbon/web-components/version/v1.21.0/search.min.js";
+import "https://1.www.s81c.com/common/carbon/web-components/version/v1.21.0/button.min.js";
+import "https://1.www.s81c.com/common/carbon/web-components/version/v1.21.0/ui-shell.min.js";
+import "https://1.www.s81c.com/common/carbon/web-components/version/v1.21.0/tag.min.js";
+import "https://1.www.s81c.com/common/carbon/web-components/version/v1.21.0/data-table.min.js";
+import "https://1.www.s81c.com/common/carbon/web-components/version/v1.21.0/checkbox.min.js";
+import "https://1.www.s81c.com/common/carbon/web-components/version/v1.21.0/modal.min.js";
 import data from "assets/data/questions.json";
 import Question from "src/models/question";
 import QuestionSet from "src/models/questionSet";

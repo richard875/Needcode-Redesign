@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     shim: false,
   },
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
+  plugins: ["@/plugins/gtag"],
   build: {
     transpile: ["vaadin"],
   },

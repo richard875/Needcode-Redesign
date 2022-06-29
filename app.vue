@@ -43,7 +43,7 @@ export default {
   },
   head() {
     const colorMode = useColorMode();
-    const favicon: string = `assets/images/assembly_icon${
+    const favicon: string = `/assembly_icon${
       colorMode.value === "dark" ? "" : "_light"
     }.svg`;
 

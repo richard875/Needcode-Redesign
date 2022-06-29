@@ -22,7 +22,7 @@ export default {
     <!-- Left -->
     <div class="flex items-center justify-center">
       <img
-        src="assets/images/assembly_icon.svg"
+        src="/assembly_icon.svg"
         alt="Neetcode Logo"
         class="w-5 h-5 mr-3"
       />

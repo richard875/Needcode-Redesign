@@ -17,9 +17,16 @@ export default defineNuxtConfig({
       ],
       link: [
         {
-          hid: "icon",
+          hid: "icon-dark",
           rel: "icon",
           type: "image/x-icon",
+          href: "/assembly_icon.svg",
+        },
+        {
+          hid: "icon-light",
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/assembly_icon_light.svg",
         },
       ],
     },

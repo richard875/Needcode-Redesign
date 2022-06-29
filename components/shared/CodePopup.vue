@@ -107,7 +107,7 @@ export default {
           direction="right"
         >
           <img
-            src="assets/images/team_blind_favicon.ico"
+            src="~/assets/img/team_blind_favicon.ico"
             alt="Team Blind Logo"
             style="height: 18px"
           />

@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5eae7b00-576a-4277-8819-353855dfeaf5/deploy-status)](https://app.netlify.com/sites/neetcode/deploys)
+
 # Neetcode Resesign with nuxt 3 RC
 
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.

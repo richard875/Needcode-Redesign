@@ -1,10 +1,10 @@
-# Nuxt 3 Minimal Starter
+# Neetcode Resesign with nuxt 3 RC
 
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
 ## Stack
 
-Built with Nuxt 3 RC
+### Built with Nuxt 3 RC
 
 ``` bash
 fontawesome
@@ -15,6 +15,23 @@ Nuxt 3
 lit.dev
 prism
 sass
+```
+
+### Roadmap
+
+``` bash
+Code skeleton
+Mobile view
+Dark mode
+Search functionality
+and more...
+```
+
+### Docs
+
+``` bash
+https://web-components.carbondesignsystem.com/
+https://carbondesignsystem.com/guidelines/2x-grid/overview/ for design guidelines
 ```
 
 ## Setup

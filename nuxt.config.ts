@@ -1,5 +1,4 @@
 import { defineNuxtConfig } from "nuxt";
-import { GOOGLE_ANALYTICS_ID } from "./key/googleAnalytics";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -32,15 +31,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  googleAnalytics: {
-    id: GOOGLE_ANALYTICS_ID,
-  },
-  publicRuntimeConfig: {
-    googleAnalytics: {
-      id: GOOGLE_ANALYTICS_ID,
-    },
-  },
-  buildModules: ["@nuxtjs/google-analytics"],
   typescript: {
     shim: false,
   },

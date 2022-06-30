@@ -33,6 +33,7 @@ Code skeleton
 Mobile view
 Dark mode
 Search functionality
+Add prefilled and customize hints
 and more...
 ```
 

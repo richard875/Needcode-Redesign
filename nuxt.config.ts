@@ -8,7 +8,10 @@ export default defineNuxtConfig({
       title: "A better way to prepare for coding interviews",
       titleTemplate: "%s - Neetcode.io",
       meta: [
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1, maximum-scale=1",
+        },
         // {
         //   hid: "description",
         //   name: "description",

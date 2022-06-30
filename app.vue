@@ -19,10 +19,12 @@ export default {
       blindQuestions: false as Boolean,
       questions: DeepCopy(data) as Array<QuestionSet>,
       totalCompletedQuestions: 0 as Number,
+      menuOpen: false as Boolean,
     };
   },
   methods: {
     emitUpdateCurrentTab(index: number) {
+      this.menuOpen = false;
       this.currentTab = index;
     },
     emitUpdateBlindQuestions(blindQuestions: boolean) {
@@ -39,6 +41,9 @@ export default {
     },
     emitTotalCompletedQuestions(questions: number) {
       this.totalCompletedQuestions = questions;
+    },
+    triggerMobileMenu() {
+      this.menuOpen = !this.menuOpen;
     },
   },
   head() {
@@ -64,12 +69,13 @@ export default {
 <template>
   <div>
     <!-- Top bar -->
-    <NavBar />
+    <NavBar @triggerMenu="triggerMobileMenu" />
 
     <!-- Left side -->
     <SideBar
       :questions="questions"
       :total-completed-questions="totalCompletedQuestions"
+      :menu-open="menuOpen"
       @updateCurrentTab="emitUpdateCurrentTab"
       @updateQuestionMode="emitUpdateBlindQuestions"
     />

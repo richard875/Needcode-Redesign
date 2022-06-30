@@ -11,6 +11,9 @@ export default {
   },
   methods: {
     Goto,
+    triggerMenu() {
+      this.$emit("triggerMenu");
+    },
   },
 };
 </script>
@@ -22,6 +25,7 @@ export default {
     <!-- Left -->
     <div class="flex items-center justify-center">
       <button
+        @click="triggerMenu"
         class="block md:hidden mr-3"
         aria-label="Mobile menu"
         tabindex="0"

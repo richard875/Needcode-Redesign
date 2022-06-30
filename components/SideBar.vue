@@ -12,6 +12,9 @@ export default {
       type: Number,
       required: true
     },
+    menuOpen: {
+      type: Boolean,
+    },
   },
   data() {
     return {
@@ -42,7 +45,10 @@ export default {
 
 <template>
   <div
-    class="hidden md:block fixed w-80 mb-44 top-12 bottom-0 left-0 bg-white overflow-y-auto sidebar sidebar-border"
+    :class="[
+      menuOpen ? 'block' : 'hidden',
+      'md:block fixed w-80 mb-44 top-12 bottom-0 left-0 bg-white overflow-y-auto sidebar sidebar-border z-999 shadow',
+    ]"
   >
     <div class="fixed top-12 w-80 z-50 bg-white sidebar-border">
       <bx-search
@@ -108,7 +114,7 @@ export default {
     </div>
 
     <!-- Fixed at bottom -->
-    <div class="fixed bottom-0 w-80 sidebar-border">
+    <div class="fixed bottom-0 bg-white w-80 sidebar-border">
       <!-- Divider above the question list -->
       <bx-side-nav-divider></bx-side-nav-divider>
 

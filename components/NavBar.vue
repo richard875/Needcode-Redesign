@@ -21,11 +21,30 @@ export default {
   >
     <!-- Left -->
     <div class="flex items-center justify-center">
-      <img
-        src="/assembly_icon.svg"
-        alt="Neetcode Logo"
-        class="w-5 h-5 mr-3"
-      />
+      <button
+        class="block md:hidden mr-3"
+        aria-label="Mobile menu"
+        tabindex="0"
+        type="button"
+      >
+        <svg
+          focusable="false"
+          preserveAspectRatio="xMidYMid meet"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          width="20"
+          height="20"
+          viewBox="0 0 32 32"
+          aria-hidden="true"
+        >
+          <path
+            fill="#ffffff"
+            d="M14 4H18V8H14zM4 4H8V8H4zM24 4H28V8H24zM14 14H18V18H14zM4 14H8V18H4zM24 14H28V18H24zM14 24H18V28H14zM4 24H8V28H4zM24 24H28V28H24z"
+          ></path>
+        </svg>
+      </button>
+
+      <img src="/assembly_icon.svg" alt="Neetcode Logo" class="w-5 h-5 mr-3" />
       <div>
         <span class="IBMPlexMono-Light text-white">Neetcode</span>
         <span class="IBMPlexMono-SemiBold text-white">.io</span>

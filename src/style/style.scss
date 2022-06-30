@@ -5,6 +5,10 @@ body {
   font-family: "IBM Plex Sans", sans-serif !important;
 }
 
+.z-999 {
+  z-index: 999 !important;
+}
+
 // In the code viewer
 .copy-to-clipboard-button {
   width: 80px !important;

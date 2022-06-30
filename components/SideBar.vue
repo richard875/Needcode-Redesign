@@ -46,8 +46,8 @@ export default {
 <template>
   <div
     :class="[
-      menuOpen ? 'block' : 'hidden',
-      'md:block fixed w-80 mb-44 top-12 bottom-0 left-0 bg-white overflow-y-auto sidebar sidebar-border z-999 shadow',
+      menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible',
+      'md:opacity-100 md:visible fixed w-80 mb-44 top-12 bottom-0 left-0 bg-white overflow-y-auto sidebar sidebar-border z-999 shadow transition-all',
     ]"
   >
     <div class="fixed top-12 w-80 z-50 bg-white sidebar-border">

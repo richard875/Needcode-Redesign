@@ -38,6 +38,9 @@ export default defineNuxtConfig({
   build: {
     transpile: ["vaadin"],
   },
+  runtimeConfig: {
+    googleAnalyticsId: "",
+  },
   vue: {
     compilerOptions: {
       isCustomElement: (tag) =>

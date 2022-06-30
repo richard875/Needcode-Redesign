@@ -58,7 +58,7 @@ export default {
     <!-- Right -->
     <div class="flex h-full">
       <bx-tooltip-icon
-        class="icoon-wrapper"
+        class="icon-wrapper"
         alignment="center"
         body-text="Patreon"
         direction="bottom"
@@ -67,7 +67,7 @@ export default {
         <font-awesome-icon icon="fa-solid fa-heart" inverse />
       </bx-tooltip-icon>
       <bx-tooltip-icon
-        class="icoon-wrapper"
+        class="icon-wrapper"
         alignment="center"
         body-text="YouTube"
         direction="bottom"
@@ -76,7 +76,7 @@ export default {
         <font-awesome-icon icon="fa-brands fa-youtube" inverse />
       </bx-tooltip-icon>
       <bx-tooltip-icon
-        class="icoon-wrapper"
+        class="icon-wrapper"
         alignment="center"
         body-text="Discord"
         direction="bottom"
@@ -85,7 +85,7 @@ export default {
         <font-awesome-icon icon="fa-brands fa-discord" inverse />
       </bx-tooltip-icon>
       <bx-tooltip-icon
-        class="icoon-wrapper"
+        class="icon-wrapper"
         alignment="center"
         body-text="Twitter"
         direction="left"
@@ -98,11 +98,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+// Small tablets and large smartphones (landscape view)
+$screen-sm: 576px;
+
 .navbar {
   background-color: #161616;
   border-bottom: 1px solid #393939;
 
-  .icoon-wrapper {
+  .icon-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,6 +119,17 @@ export default {
     &:hover {
       cursor: pointer;
       background-color: #363636;
+    }
+  }
+}
+
+@media (max-width: #{$screen-sm}) {
+  .navbar {
+    .icon-wrapper {
+      svg {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
     }
   }
 }

@@ -75,7 +75,7 @@ export default {
     />
 
     <!-- Right side -->
-    <div class="ml-80 !pt-20 p-10">
+    <div class="ml-0 md:ml-80 !pt-20 p-10">
       <QuestionSection
         :questions="questions"
         :current-tab="currentTab"

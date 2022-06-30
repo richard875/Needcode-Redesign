@@ -42,7 +42,7 @@ export default {
 
 <template>
   <div
-    class="fixed w-80 mb-44 top-12 bottom-0 left-0 bg-white overflow-y-auto sidebar sidebar-border"
+    class="hidden md:block fixed w-80 mb-44 top-12 bottom-0 left-0 bg-white overflow-y-auto sidebar sidebar-border"
   >
     <div class="fixed top-12 w-80 z-50 bg-white sidebar-border">
       <bx-search

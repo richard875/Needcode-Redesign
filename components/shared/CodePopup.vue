@@ -105,7 +105,7 @@ export default {
           class="ml-2 flex items-center justify-center"
           alignment="center"
           body-text="This problem is in Blind 75"
-          direction="right"
+          direction="bottom"
         >
           <img
             src="~/assets/img/team_blind_favicon.ico"
@@ -138,7 +138,7 @@ export default {
         Close
       </bx-modal-footer-button>
       <bx-modal-footer-button kind="primary" :href="githubUrl" target="_blank">
-        <span>
+        <span class="!whitespace-nowrap">
           <font-awesome-icon icon="fa-brands fa-github" size="lg" />
           &nbsp;View in GitHub&nbsp;
           <font-awesome-icon

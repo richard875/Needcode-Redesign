@@ -7,6 +7,7 @@ import "https://1.www.s81c.com/common/carbon/web-components/version/v1.21.0/tag.
 import "https://1.www.s81c.com/common/carbon/web-components/version/v1.21.0/data-table.min.js";
 import "https://1.www.s81c.com/common/carbon/web-components/version/v1.21.0/checkbox.min.js";
 import "https://1.www.s81c.com/common/carbon/web-components/version/v1.21.0/modal.min.js";
+import "https://1.www.s81c.com/common/carbon/web-components/version/v1.21.0/overflow-menu.min.js";
 import data from "assets/data/questions.json";
 import Question from "src/models/question";
 import QuestionSet from "src/models/questionSet";

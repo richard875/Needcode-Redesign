@@ -5,7 +5,6 @@ import Difficulty from "../src/enum/difficulty";
 import CodeLanguage from "../src/enum/codeLanguage";
 import Goto from "../helper/goto";
 import TagColor from "../helper/tagColor";
-import FontaewsomeColor from "../helper/fontaewsomeColor";
 import NestedObjectLength from "../helper/nestedObjectLength";
 
 // Const value
@@ -155,16 +154,19 @@ export default {
       <bx-table-head>
         <bx-table-header-row>
           <bx-table-header-cell class="pr-0">
-            <span class="maxlg:hidden">Status</span>
-            <span class="lg:hidden">Done</span>
+            <span class="maxmd:hidden">Status</span>
+            <span class="md:hidden">Done</span>
           </bx-table-header-cell>
           <bx-table-header-cell>Problem</bx-table-header-cell>
           <bx-table-header-cell class="maxlg:hidden"
             >Difficulty
           </bx-table-header-cell>
-          <bx-table-header-cell>
+          <bx-table-header-cell class="maxmd:text-right">
             Video
-            <span class="maxlg:hidden"> Solution</span>
+            <span class="md:hidden">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="maxmd:hidden"> Solution</span>
           </bx-table-header-cell>
           <bx-table-header-cell class="maxmd:hidden"
             >Code
@@ -197,21 +199,20 @@ export default {
             @click="Goto(question.leetcodeUrl)"
           >
             <div class="flex items-center">
-              <span
-                class="lg:hidden"
-                :style="{ color: FontaewsomeColor(question.difficulty) }"
-              >
-                &#9679;&nbsp;&nbsp;
-              </span>
-              <span class="hover:underline">{{ question.question }}</span>
+              <span class="hover:underline mr-2">{{ question.question }}</span>
               <bx-tag
                 type="purple"
                 :class="[
                   checked(question.leetcodeUrl) ? 'opacity-100' : 'opacity-0',
-                  'maxlg:hidden ml-2 transition-all',
+                  'maxlg:hidden transition-all',
                 ]"
               >
                 <font-awesome-icon icon="fa-solid fa-check" />
+              </bx-tag>
+              <bx-tag :type="TagColor(question.difficulty)" class="lg:hidden">
+                <span class="select-none whitespace-nowrap">
+                  {{ Difficulty[question.difficulty] }}
+                </span>
               </bx-tag>
             </div>
           </bx-table-cell>
@@ -228,7 +229,7 @@ export default {
             <!-- Only show on large screen -->
             <bx-btn
               v-if="question.videoUrl !== ''"
-              class="maxlg:hidden"
+              class="maxmd:hidden"
               size="sm"
               :href="question.videoUrl"
               target="_blank"
@@ -256,39 +257,55 @@ export default {
                 />
               </svg>
             </bx-btn>
-            <bx-btn v-else size="sm" class="maxlg:hidden" disabled>
+            <bx-btn v-else size="sm" class="maxmd:hidden" disabled>
               <span class="text-xs">Video coming soon</span>
             </bx-btn>
 
             <!-- Only show on small screen -->
-            <bx-btn
-              :disabled="question.videoUrl === ''"
-              :href="question.videoUrl"
-              class="lg:hidden"
-              kind="primary"
-              size="sm"
-              icon-layout=""
-              target="_blank"
-            >
-              <svg
-                focusable="false"
-                preserveAspectRatio="xMidYMid meet"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                aria-hidden="true"
-                width="16"
-                height="16"
-                viewBox="0 0 32 32"
-                slot="icon"
+            <div class="md:hidden flex-row-reverse flex items-center">
+              <bx-overflow-menu size="sm">
+                <bx-overflow-menu-body alignment="end">
+                  <bx-modal-label class="pl-4 pt-2">Code</bx-modal-label>
+                  <bx-overflow-menu-item class="border-t border-gray-300"
+                    >Option 1</bx-overflow-menu-item
+                  >
+                  <bx-overflow-menu-item class="border-b border-gray-300"
+                    >Option 2</bx-overflow-menu-item
+                  >
+                  <bx-overflow-menu-item>Option 3</bx-overflow-menu-item>
+                  <bx-overflow-menu-item>Option 4</bx-overflow-menu-item>
+                  <bx-overflow-menu-item>Option 5</bx-overflow-menu-item>
+                </bx-overflow-menu-body>
+              </bx-overflow-menu>
+              <bx-btn
+                :disabled="question.videoUrl === ''"
+                :href="question.videoUrl"
+                class="mr-3"
+                kind="primary"
+                size="sm"
+                icon-layout=""
+                target="_blank"
               >
-                <!---->
-                <path
-                  fill="#ffffff"
-                  d="M7,28a1,1,0,0,1-1-1V5a1,1,0,0,1,1.4819-.8763l20,11a1,1,0,0,1,0,1.7525l-20,11A1.0005,1.0005,0,0,1,7,28ZM8,6.6909V25.3088L24.9248,16Z"
-                  transform="translate(0)"
-                />
-              </svg>
-            </bx-btn>
+                <svg
+                  focusable="false"
+                  preserveAspectRatio="xMidYMid meet"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 32 32"
+                  slot="icon"
+                >
+                  <!---->
+                  <path
+                    fill="#ffffff"
+                    d="M7,28a1,1,0,0,1-1-1V5a1,1,0,0,1,1.4819-.8763l20,11a1,1,0,0,1,0,1.7525l-20,11A1.0005,1.0005,0,0,1,7,28ZM8,6.6909V25.3088L24.9248,16Z"
+                    transform="translate(0)"
+                  />
+                </svg>
+              </bx-btn>
+            </div>
           </bx-table-cell>
           <!-- Code column -->
           <bx-table-cell class="maxmd:hidden">
@@ -390,5 +407,9 @@ export default {
 bx-table-cell {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+bx-overflow-menu {
+  background-color: #e0e0e0;
 }
 </style>

@@ -35,6 +35,7 @@ Dark mode
 Search functionality
 Add prefilled and customize hints
 Click outside to close mobile sidebar
+Maybe use Algolia?
 and more...
 ```
 

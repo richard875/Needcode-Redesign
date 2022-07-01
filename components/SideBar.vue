@@ -47,7 +47,7 @@ export default {
   <div
     :class="[
       menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible',
-      'lg:opacity-100 lg:visible fixed w-80 mb-44 top-12 bottom-0 left-0 bg-white overflow-y-auto sidebar sidebar-border z-999 shadow transition-all',
+      'lg:opacity-100 lg:visible fixed w-80 mb-44 maxmd:mb-0 top-12 bottom-0 left-0 bg-white overflow-y-auto sidebar sidebar-border z-999 shadow transition-all',
     ]"
   >
     <div class="fixed top-12 w-80 z-50 bg-white sidebar-border">
@@ -114,49 +114,12 @@ export default {
     </div>
 
     <!-- Fixed at bottom -->
-    <div class="fixed bottom-0 bg-white w-80 sidebar-border">
+    <div class="maxmd:hidden fixed bottom-0 bg-white w-80 sidebar-border">
       <!-- Divider above the question list -->
       <bx-side-nav-divider></bx-side-nav-divider>
 
       <div class="p-3 !pt-1 text-xs leading-6 text-gray-700">
-        <p>
-          Made with &#9829; in
-          <a
-            href="https://www.youtube.com/watch?v=rMdbVHPmCW0"
-            target="_blank"
-            class="text-blue-500 hover:text-blue-700"
-            >Sydney, Australia &#127462;&#127482;
-          </a>
-        </p>
-        <p>
-          Contribute solutions:
-          <a
-            href="https://github.com/neetcode-gh/leetcode"
-            target="_blank"
-            class="text-blue-500 hover:text-blue-700"
-          >
-            Github
-          </a>
-        </p>
-        <p>
-          Contact:
-          <a
-            href="mailto:neetcodebusiness@gmail.com"
-            target="_blank"
-            class="text-blue-500 hover:text-blue-700"
-            >neetcodebusiness@gmail.com</a
-          >
-        </p>
-        <p>
-          Copyright © {{ new Date().getFullYear() }}
-          <a
-            href="https://neetcode.io/"
-            target="_blank"
-            class="text-blue-500 hover:text-blue-700"
-            >NeetCode.io</a
-          >
-          All rights reserved
-        </p>
+        <SharedAppInfo />
       </div>
       <bx-btn class="w-full" @click="openModal = true">About</bx-btn>
     </div>

@@ -143,7 +143,10 @@ export default {
     <bx-table>
       <bx-table-head>
         <bx-table-header-row>
-          <bx-table-header-cell class="pr-0">Status</bx-table-header-cell>
+          <bx-table-header-cell class="pr-0">
+            <span class="maxlg:hidden">Status</span>
+            <span class="lg:hidden">Done</span>
+          </bx-table-header-cell>
           <bx-table-header-cell>Problem</bx-table-header-cell>
           <bx-table-header-cell class="maxlg:hidden"
             >Difficulty
@@ -353,6 +356,10 @@ export default {
       </bx-table-body>
     </bx-table>
   </bx-data-table>
+
+  <div class="md:hidden mt-5 text-xs leading-6 text-gray-700 text-center">
+    <SharedAppInfo />
+  </div>
 
   <client-only placeholder="Loading...">
     <SharedCodePopup

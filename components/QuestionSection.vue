@@ -108,7 +108,7 @@ export default {
 </script>
 
 <template>
-  <p class="mb-2 text-xl">{{ selectedQuestion.questionSet }}</p>
+  <p class="mb-3 text-2xl">{{ selectedQuestion.questionSet }}</p>
   <div class="mb-4 flex items-center">
     <SharedProgressCircle
       :percentage="

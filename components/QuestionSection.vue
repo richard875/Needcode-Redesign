@@ -31,6 +31,7 @@ export default {
     return {
       Difficulty,
       CodeLanguage,
+      openModal: false as Boolean,
       selectedProblem: null as Question | null,
       selectedCodeLanguage: null as CodeLanguage | null,
       codeModalOpen: false as Boolean,
@@ -108,7 +109,17 @@ export default {
 </script>
 
 <template>
-  <p class="mb-3 text-2xl">{{ selectedQuestion.questionSet }}</p>
+  <div class="flex items-center justify-between mb-3">
+    <p class="text-2xl">{{ selectedQuestion.questionSet }}</p>
+    <bx-tag
+      @click="openModal = true"
+      class="md:hidden cursor-pointer select-none whitespace-nowrap"
+      type="red"
+      title="Clear selection"
+    >
+      &nbsp;About Neetcode&nbsp;
+    </bx-tag>
+  </div>
   <div class="mb-4 flex items-center">
     <SharedProgressCircle
       :percentage="
@@ -118,7 +129,7 @@ export default {
       "
     />
     <bx-tag
-      class="ml-2 text-xs text-gray-900 select-none whitespace-nowrap"
+      class="ml-2 text-gray-900 select-none whitespace-nowrap"
       type="blue"
     >
       <p>
@@ -369,6 +380,10 @@ export default {
       @closeModal="codeModalOpen = false"
     />
   </client-only>
+
+  <bx-modal :open="openModal" @bx-modal-beingclosed="openModal = false">
+    <SharedInfoModal />
+  </bx-modal>
 </template>
 
 <style lang="scss" scoped>

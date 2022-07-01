@@ -17,6 +17,7 @@ Nuxt 3
 lit.dev
 prism
 sass
+Maybe Algolia?
 ```
 
 ## Current issues
@@ -35,7 +36,6 @@ Dark mode
 Search functionality
 Add prefilled and customize hints
 Click outside to close mobile sidebar
-Maybe use Algolia?
 and more...
 ```
 

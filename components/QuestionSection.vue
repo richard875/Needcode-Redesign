@@ -75,7 +75,6 @@ export default {
   methods: {
     Goto,
     TagColor,
-    FontaewsomeColor,
     NestedObjectLength,
     statusChecked(event: any, questionSet: string, questionKey: string, blindQuestion: boolean) {
       const neetCodeLocalStorage = localStorage.getItem(NEETCODE_LOCALSTORAGE_QUESTION_LIST);

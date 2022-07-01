@@ -5,6 +5,7 @@ import Difficulty from "../src/enum/difficulty";
 import CodeLanguage from "../src/enum/codeLanguage";
 import Goto from "../helper/goto";
 import TagColor from "../helper/tagColor";
+import FontaewsomeColor from "../helper/fontaewsomeColor";
 import NestedObjectLength from "../helper/nestedObjectLength";
 
 // Const value
@@ -74,6 +75,7 @@ export default {
   methods: {
     Goto,
     TagColor,
+    FontaewsomeColor,
     NestedObjectLength,
     statusChecked(event: any, questionSet: string, questionKey: string, blindQuestion: boolean) {
       const neetCodeLocalStorage = localStorage.getItem(NEETCODE_LOCALSTORAGE_QUESTION_LIST);
@@ -140,9 +142,16 @@ export default {
         <bx-table-header-row>
           <bx-table-header-cell class="pr-0">Status</bx-table-header-cell>
           <bx-table-header-cell>Problem</bx-table-header-cell>
-          <bx-table-header-cell>Difficulty</bx-table-header-cell>
-          <bx-table-header-cell>Video Solution</bx-table-header-cell>
-          <bx-table-header-cell>Code</bx-table-header-cell>
+          <bx-table-header-cell class="maxlg:hidden"
+            >Difficulty
+          </bx-table-header-cell>
+          <bx-table-header-cell>
+            Video
+            <span class="maxlg:hidden"> Solution</span>
+          </bx-table-header-cell>
+          <bx-table-header-cell class="maxlg:hidden"
+            >Code
+          </bx-table-header-cell>
         </bx-table-header-row>
       </bx-table-head>
       <bx-table-body>
@@ -171,12 +180,18 @@ export default {
             @click="Goto(question.leetcodeUrl)"
           >
             <div class="flex items-center">
-              {{ question.question }}
+              <span
+                class="lg:hidden"
+                :style="{ color: FontaewsomeColor(question.difficulty) }"
+              >
+                &#9679;&nbsp;&nbsp;
+              </span>
+              <span class="hover:underline">{{ question.question }}</span>
               <bx-tag
                 type="purple"
                 :class="[
                   checked(question.leetcodeUrl) ? 'opacity-100' : 'opacity-0',
-                  'ml-2 transition-all',
+                  'maxlg:hidden ml-2 transition-all',
                 ]"
               >
                 <font-awesome-icon icon="fa-solid fa-check" />
@@ -184,17 +199,19 @@ export default {
             </div>
           </bx-table-cell>
           <!-- Difficulty column -->
-          <bx-table-cell>
+          <bx-table-cell class="maxlg:hidden">
             <bx-tag :type="TagColor(question.difficulty)">
-              <span class="select-none">
+              <span class="select-none whitespace-nowrap">
                 {{ Difficulty[question.difficulty] }}
               </span>
             </bx-tag>
           </bx-table-cell>
           <!-- Video column -->
           <bx-table-cell>
+            <!-- Only show on large screen -->
             <bx-btn
               v-if="question.videoUrl !== ''"
+              class="maxlg:hidden"
               size="sm"
               :href="question.videoUrl"
               target="_blank"
@@ -222,12 +239,42 @@ export default {
                 />
               </svg>
             </bx-btn>
-            <bx-btn v-else size="sm" disabled>
+            <bx-btn v-else size="sm" class="maxlg:hidden" disabled>
               <span class="text-xs">Video coming soon</span>
+            </bx-btn>
+
+            <!-- Only show on small screen -->
+            <bx-btn
+              :disabled="question.videoUrl === ''"
+              :href="question.videoUrl"
+              class="lg:hidden"
+              kind="primary"
+              size="sm"
+              icon-layout=""
+              target="_blank"
+            >
+              <svg
+                focusable="false"
+                preserveAspectRatio="xMidYMid meet"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                aria-hidden="true"
+                width="16"
+                height="16"
+                viewBox="0 0 32 32"
+                slot="icon"
+              >
+                <!---->
+                <path
+                  fill="#ffffff"
+                  d="M7,28a1,1,0,0,1-1-1V5a1,1,0,0,1,1.4819-.8763l20,11a1,1,0,0,1,0,1.7525l-20,11A1.0005,1.0005,0,0,1,7,28ZM8,6.6909V25.3088L24.9248,16Z"
+                  transform="translate(0)"
+                />
+              </svg>
             </bx-btn>
           </bx-table-cell>
           <!-- Code column -->
-          <bx-table-cell>
+          <bx-table-cell class="maxlg:hidden">
             <div class="flex">
               <!-- Python -->
               <bx-tooltip-icon

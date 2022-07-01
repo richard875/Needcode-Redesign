@@ -157,15 +157,11 @@ export default {
             <span class="md:hidden">Done</span>
           </bx-table-header-cell>
           <bx-table-header-cell>Problem</bx-table-header-cell>
-          <bx-table-header-cell class="maxlg:hidden"
+          <bx-table-header-cell class="maxmd:hidden"
             >Difficulty
           </bx-table-header-cell>
           <bx-table-header-cell class="maxmd:text-right">
-            Video
-            <span class="md:hidden">
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
-            <span class="maxmd:hidden"> Solution</span>
+            <span class="maxmd:hidden">Video Solution</span>
           </bx-table-header-cell>
           <bx-table-header-cell class="maxmd:hidden"
             >Code
@@ -208,15 +204,10 @@ export default {
               >
                 <font-awesome-icon icon="fa-solid fa-check" />
               </bx-tag>
-              <bx-tag :type="TagColor(question.difficulty)" class="lg:hidden">
-                <span class="select-none whitespace-nowrap">
-                  {{ Difficulty[question.difficulty] }}
-                </span>
-              </bx-tag>
             </div>
           </bx-table-cell>
           <!-- Difficulty column -->
-          <bx-table-cell class="maxlg:hidden">
+          <bx-table-cell class="maxmd:hidden">
             <bx-tag :type="TagColor(question.difficulty)">
               <span class="select-none whitespace-nowrap">
                 {{ Difficulty[question.difficulty] }}
@@ -264,16 +255,24 @@ export default {
             <div class="md:hidden flex-row-reverse flex items-center">
               <bx-overflow-menu size="sm">
                 <bx-overflow-menu-body alignment="end">
-                  <bx-modal-label class="pl-4 pt-2">Code</bx-modal-label>
-                  <bx-overflow-menu-item class="border-t border-gray-300"
-                    >Option 1</bx-overflow-menu-item
+                  <bx-modal-label class="w-full pl-4 py-2 !m-0 bg-zinc-200">
+                    Code
+                  </bx-modal-label>
+                  <!-- Python -->
+                  <bx-overflow-menu-item
+                    v-if="question.pythonUrl !== ''"
+                    class="border-t border-gray-300"
+                    @click="triggerModal(question, CodeLanguage.Python)"
                   >
-                  <bx-overflow-menu-item class="border-b border-gray-300"
-                    >Option 2</bx-overflow-menu-item
+                    Python
+                  </bx-overflow-menu-item>
+                  <!-- Java -->
+                  <bx-overflow-menu-item
+                    v-if="question.javaUrl !== ''"
+                    @click="triggerModal(question, CodeLanguage.Java)"
                   >
-                  <bx-overflow-menu-item>Option 3</bx-overflow-menu-item>
-                  <bx-overflow-menu-item>Option 4</bx-overflow-menu-item>
-                  <bx-overflow-menu-item>Option 5</bx-overflow-menu-item>
+                    Java
+                  </bx-overflow-menu-item>
                 </bx-overflow-menu-body>
               </bx-overflow-menu>
               <bx-btn
@@ -304,6 +303,11 @@ export default {
                   />
                 </svg>
               </bx-btn>
+              <bx-tag :type="TagColor(question.difficulty)" class="mr-3">
+                <span class="select-none whitespace-nowrap">
+                  {{ Difficulty[question.difficulty].slice(0, 1) }}
+                </span>
+              </bx-tag>
             </div>
           </bx-table-cell>
           <!-- Code column -->

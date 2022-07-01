@@ -46,7 +46,7 @@ export default {
 <template>
   <div
     :class="[
-      menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible maxlg:-left-80',
+      menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible',
       'lg:opacity-100 lg:visible fixed w-80 mb-44 maxmd:mb-0 top-12 bottom-0 left-0 bg-white overflow-y-auto sidebar sidebar-border z-999 shadow transition-all',
     ]"
   >

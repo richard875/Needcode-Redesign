@@ -117,7 +117,10 @@ export default {
         )
       "
     />
-    <bx-tag class="ml-2 text-xs text-gray-900" type="blue">
+    <bx-tag
+      class="ml-2 text-xs text-gray-900 select-none whitespace-nowrap"
+      type="blue"
+    >
       <p>
         &nbsp;{{ setCompletedQuestion }} /
         {{ selectedQuestion.questions.length }} questions completed&nbsp;
@@ -128,7 +131,7 @@ export default {
         setCompletedQuestion === selectedQuestion.questions.length
           ? 'opacity-100'
           : 'opacity-0',
-        'ml-1 text-xs text-gray-900 transition-all',
+        'ml-1 text-xs text-gray-900 transition-all select-none whitespace-nowrap',
       ]"
       type="green"
     >
@@ -149,7 +152,7 @@ export default {
             Video
             <span class="maxlg:hidden"> Solution</span>
           </bx-table-header-cell>
-          <bx-table-header-cell class="maxlg:hidden"
+          <bx-table-header-cell class="maxmd:hidden"
             >Code
           </bx-table-header-cell>
         </bx-table-header-row>
@@ -274,7 +277,7 @@ export default {
             </bx-btn>
           </bx-table-cell>
           <!-- Code column -->
-          <bx-table-cell class="maxlg:hidden">
+          <bx-table-cell class="maxmd:hidden">
             <div class="flex">
               <!-- Python -->
               <bx-tooltip-icon

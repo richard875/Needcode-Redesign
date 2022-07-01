@@ -26,7 +26,7 @@ export default {
     <div class="flex items-center justify-center">
       <button
         @click="triggerMenu"
-        class="block md:hidden mr-3"
+        class="block lg:hidden mr-3"
         aria-label="Mobile menu"
         tabindex="0"
         type="button"

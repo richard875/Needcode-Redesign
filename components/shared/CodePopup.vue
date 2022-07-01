@@ -101,6 +101,7 @@ export default {
           {{ selectedQuestion.question }}
         </bx-modal-heading>
         <bx-tooltip-icon
+          v-if="selectedQuestion.blindQuestion"
           class="ml-2 flex items-center justify-center"
           alignment="center"
           body-text="This problem is in Blind 75"

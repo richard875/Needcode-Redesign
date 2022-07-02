@@ -37,7 +37,7 @@ export default {
   height: 100vh;
 
   .spinner-wrapper {
-    transform: scale(0.5);
+    transform: scale(0.3);
   }
 }
 

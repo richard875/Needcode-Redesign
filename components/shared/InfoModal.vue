@@ -48,7 +48,7 @@
 <style lang="scss" scoped>
 .video-container {
   background: url(assets/img/youtube.svg) center center no-repeat;
-  background-size: auto 70px;
+  background-size: auto 50px;
   background-color: #e5e5e5;
   position: relative;
   padding-bottom: 56.25%;

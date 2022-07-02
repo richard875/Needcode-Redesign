@@ -269,6 +269,18 @@ export default {
                   >
                     Java
                   </bx-overflow-menu-item>
+                  <bx-modal-label class="w-full pl-4 py-2 !m-0 bg-zinc-200">
+                    Hint
+                  </bx-modal-label>
+                  <!-- Neetcode -->
+                  <bx-overflow-menu-item
+                    v-if="question.neetcodeHint !== ''"
+                    @click="triggerHint(question, true)"
+                  >
+                    Neetcode
+                  </bx-overflow-menu-item>
+                  <!-- Customize -->
+                  <bx-overflow-menu-item>Add/Edit</bx-overflow-menu-item>
                 </bx-overflow-menu-body>
               </bx-overflow-menu>
               <bx-btn

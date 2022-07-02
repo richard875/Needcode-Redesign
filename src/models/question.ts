@@ -5,6 +5,7 @@ interface Question {
   videoUrl: string;
   pythonUrl: string;
   javaUrl: string;
+  neetcodeHint: string;
   blindQuestion: boolean;
 }
 

@@ -321,9 +321,7 @@ export default {
                     .BackgroundColor,
                 }"
               >
-                <span class="select-none">
-                  {{ TagColorMobile(question.difficulty).Name }}
-                </span>
+                {{ TagColorMobile(question.difficulty).Name }}
               </div>
             </div>
           </bx-table-cell>

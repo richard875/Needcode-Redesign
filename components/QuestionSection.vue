@@ -401,12 +401,17 @@ export default {
     />
   </client-only>
 
-  <bx-modal v-if="openModal" @bx-modal-beingclosed="openModal = false" open>
-    <SharedInfoModal />
-  </bx-modal>
+  <!-- About modal box -->
+  <Transition name="bounce">
+    <bx-modal v-if="openModal" @bx-modal-beingclosed="openModal = false" open>
+      <SharedInfoModal />
+    </bx-modal>
+  </Transition>
 </template>
 
 <style lang="scss" scoped>
+@import "src/style/popup.scss";
+
 bx-table-cell {
   padding-top: 10px;
   padding-bottom: 10px;

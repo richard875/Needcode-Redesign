@@ -126,12 +126,16 @@ export default {
   </div>
 
   <!-- About modal box -->
-  <bx-modal v-if="openModal" @bx-modal-beingclosed="openModal = false" open>
-    <SharedInfoModal />
-  </bx-modal>
+  <Transition name="bounce">
+    <bx-modal v-if="openModal" @bx-modal-beingclosed="openModal = false" open>
+      <SharedInfoModal />
+    </bx-modal>
+  </Transition>
 </template>
 
 <style lang="scss" scoped>
+@import "src/style/popup.scss";
+
 .sidebar {
   bx-side-nav-link {
     border-right: 5px solid transparent;

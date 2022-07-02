@@ -126,7 +126,7 @@ export default {
   </div>
 
   <!-- About modal box -->
-  <bx-modal :open="openModal" @bx-modal-beingclosed="openModal = false">
+  <bx-modal v-if="openModal" @bx-modal-beingclosed="openModal = false" open>
     <SharedInfoModal />
   </bx-modal>
 </template>

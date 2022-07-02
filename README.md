@@ -24,6 +24,7 @@ Maybe Algolia?
 
 ``` base
 Static bottom doesn't work on safari
+Drop down list is out of place on safari when scrolled
 ```
 
 ### Roadmap

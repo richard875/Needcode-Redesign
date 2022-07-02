@@ -155,23 +155,14 @@ export default {
 
   <bx-data-table>
     <bx-table>
-      <bx-table-head>
+      <bx-table-head class="maxmd:hidden">
         <bx-table-header-row>
-          <bx-table-header-cell class="pr-0">
-            <span class="maxmd:hidden">Status</span>
-            <span class="md:hidden">Done</span>
-          </bx-table-header-cell>
+          <bx-table-header-cell class="pr-0">Status</bx-table-header-cell>
           <bx-table-header-cell>Problem</bx-table-header-cell>
-          <bx-table-header-cell class="maxmd:hidden"
-            >Difficulty
-          </bx-table-header-cell>
-          <bx-table-header-cell class="maxmd:text-right">
-            <span class="maxmd:hidden">Video Solution</span>
-          </bx-table-header-cell>
+          <bx-table-header-cell>Difficulty</bx-table-header-cell>
+          <bx-table-header-cell>Video Solution</bx-table-header-cell>
           <bx-table-header-cell>Hint</bx-table-header-cell>
-          <bx-table-header-cell class="maxmd:hidden"
-            >Code
-          </bx-table-header-cell>
+          <bx-table-header-cell>Code</bx-table-header-cell>
         </bx-table-header-row>
       </bx-table-head>
       <bx-table-body>
@@ -315,8 +306,8 @@ export default {
               </bx-tag>
             </div>
           </bx-table-cell>
-          <!-- Code column -->
-          <bx-table-cell>
+          <!-- Hint column -->
+          <bx-table-cell class="maxmd:hidden">
             <div class="flex">
               <!-- Neetcode hint -->
               <bx-tooltip-icon

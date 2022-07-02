@@ -31,6 +31,7 @@ export default {
       Difficulty,
       CodeLanguage,
       openModal: false as Boolean,
+      openNeetcodeHint: false as Boolean,
       selectedProblem: null as Question | null,
       selectedCodeLanguage: null as CodeLanguage | null,
       codeModalOpen: false as Boolean,
@@ -96,6 +97,10 @@ export default {
       this.selectedProblem = codeProblem;
       this.selectedCodeLanguage = codeLanguage;
       this.codeModalOpen = true;
+    },
+    triggerHint(codeProblem: Question, isNeetcode: boolean) {
+      this.selectedProblem = codeProblem;
+      this.openNeetcodeHint = true;
     },
     checked(leetcodeUrl: string) {
       return this.currentSavedQuestions &&
@@ -163,6 +168,7 @@ export default {
           <bx-table-header-cell class="maxmd:text-right">
             <span class="maxmd:hidden">Video Solution</span>
           </bx-table-header-cell>
+          <bx-table-header-cell>Hint</bx-table-header-cell>
           <bx-table-header-cell class="maxmd:hidden"
             >Code
           </bx-table-header-cell>
@@ -310,6 +316,76 @@ export default {
             </div>
           </bx-table-cell>
           <!-- Code column -->
+          <bx-table-cell>
+            <div class="flex">
+              <!-- Neetcode hint -->
+              <bx-tooltip-icon
+                class="mr-3"
+                alignment="center"
+                :body-text="
+                  question.neetcodeHint === ''
+                    ? 'Not provided, add your own!'
+                    : 'From Neetcode'
+                "
+                direction="bottom"
+              >
+                <bx-btn
+                  kind="secondary"
+                  icon-layout=""
+                  size="sm"
+                  @click="triggerHint(question, true)"
+                  :disabled="question.neetcodeHint === ''"
+                >
+                  <svg
+                    class="svg-inline--fa fa-python"
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fab"
+                    data-icon="python"
+                    role="img"
+                    width="16"
+                    height="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    slot="icon"
+                  >
+                    <path
+                      fill="#ffffff"
+                      d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438 0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1h-160L112.1 454.3zM192 0C90.02 .3203 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8c16.53 18.84 42.34 58.23 52.22 91.45c.0313 .25 .0938 .5166 .125 .7823h160.2c.0313-.2656 .0938-.5166 .125-.7823c9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 175.1C368 78.8 289.2 .0039 192 0zM288.4 260.1c-15.66 17.85-35.04 46.3-49.05 75.89h-94.61c-14.01-29.59-33.39-58.04-49.04-75.88C75.24 236.8 64 206.1 64 175.1C64 113.3 112.1 48.25 191.1 48C262.6 48 320 105.4 320 175.1C320 206.1 308.8 236.8 288.4 260.1zM176 80C131.9 80 96 115.9 96 160c0 8.844 7.156 16 16 16S128 168.8 128 160c0-26.47 21.53-48 48-48c8.844 0 16-7.148 16-15.99S184.8 80 176 80z"
+                    />
+                  </svg>
+                </bx-btn>
+              </bx-tooltip-icon>
+              <bx-tooltip-icon
+                class="mr-3"
+                alignment="center"
+                body-text="Add your own"
+                direction="bottom"
+              >
+                <bx-btn kind="secondary" icon-layout="" size="sm">
+                  <svg
+                    class="svg-inline--fa fa-python"
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fab"
+                    data-icon="python"
+                    role="img"
+                    width="16"
+                    height="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    slot="icon"
+                  >
+                    <path
+                      fill="#ffffff"
+                      d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM256 368C269.3 368 280 357.3 280 344V280H344C357.3 280 368 269.3 368 256C368 242.7 357.3 232 344 232H280V168C280 154.7 269.3 144 256 144C242.7 144 232 154.7 232 168V232H168C154.7 232 144 242.7 144 256C144 269.3 154.7 280 168 280H232V344C232 357.3 242.7 368 256 368z"
+                    />
+                  </svg>
+                </bx-btn>
+              </bx-tooltip-icon>
+            </div>
+          </bx-table-cell>
+          <!-- Code column -->
           <bx-table-cell class="maxmd:hidden">
             <div class="flex">
               <!-- Python -->
@@ -391,19 +467,35 @@ export default {
     <SharedAppInfo />
   </div>
 
-  <client-only placeholder="Loading...">
-    <SharedCodePopup
-      :selected-question="selectedProblem"
-      :selected-code-language="selectedCodeLanguage"
-      :code-modal-open="codeModalOpen"
-      @closeModal="codeModalOpen = false"
-    />
-  </client-only>
+  <!-- Code modal box -->
+  <Transition name="bounce">
+    <bx-modal
+      v-if="codeModalOpen"
+      @bx-modal-beingclosed="codeModalOpen = false"
+      open
+    >
+      <SharedCodePopup
+        :selected-question="selectedProblem"
+        :selected-code-language="selectedCodeLanguage"
+      />
+    </bx-modal>
+  </Transition>
 
   <!-- About modal box -->
   <Transition name="bounce">
     <bx-modal v-if="openModal" @bx-modal-beingclosed="openModal = false" open>
       <SharedInfoModal />
+    </bx-modal>
+  </Transition>
+
+  <!-- Hint modal box -->
+  <Transition name="bounce">
+    <bx-modal
+      v-if="openNeetcodeHint"
+      @bx-modal-beingclosed="openNeetcodeHint = false"
+      open
+    >
+      <SharedHintPopup :selected-question="selectedProblem" />
     </bx-modal>
   </Transition>
 </template>

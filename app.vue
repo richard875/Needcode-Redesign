@@ -21,7 +21,11 @@ export default {
       questions: DeepCopy(data) as Array<QuestionSet>,
       totalCompletedQuestions: 0 as Number,
       menuOpen: false as Boolean,
+      displayLoading: true as Boolean,
     };
+  },
+  mounted() {
+    this.displayLoading = false;
   },
   methods: {
     emitUpdateCurrentTab(index: number) {
@@ -94,4 +98,6 @@ export default {
       />
     </div>
   </div>
+
+  <Loading :display="displayLoading" />
 </template>

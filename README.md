@@ -29,8 +29,6 @@ Static bottom doesn't work on safari
 ### Roadmap
 
 ``` bash
-Loading animation
-Code skeleton
 Mobile view
 Dark mode
 Search functionality

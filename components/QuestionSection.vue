@@ -5,6 +5,7 @@ import Difficulty from "../src/enum/difficulty";
 import CodeLanguage from "../src/enum/codeLanguage";
 import Goto from "../helper/goto";
 import TagColor from "../helper/tagColor";
+import TagColorMobile from "../helper/tagColorMobile";
 import NestedObjectLength from "../helper/nestedObjectLength";
 
 // Const value
@@ -76,6 +77,7 @@ export default {
   methods: {
     Goto,
     TagColor,
+    TagColorMobile,
     NestedObjectLength,
     statusChecked(event: any, questionSet: string, questionKey: string, blindQuestion: boolean) {
       const neetCodeLocalStorage = localStorage.getItem(NEETCODE_LOCALSTORAGE_QUESTION_LIST);
@@ -311,11 +313,16 @@ export default {
                   />
                 </svg>
               </bx-btn>
-              <bx-tag :type="TagColor(question.difficulty)" class="mr-3">
-                <span class="select-none whitespace-nowrap">
-                  {{ Difficulty[question.difficulty].slice(0, 1) }}
-                </span>
-              </bx-tag>
+              <div
+                class="mr-3 w-8 h-8 flex items-center justify-center"
+                :style="{
+                  color: TagColorMobile(question.difficulty).TextColor,
+                  backgroundColor: TagColorMobile(question.difficulty)
+                    .BackgroundColor,
+                }"
+              >
+                {{ TagColorMobile(question.difficulty).Name }}
+              </div>
             </div>
           </bx-table-cell>
           <!-- Hint column -->

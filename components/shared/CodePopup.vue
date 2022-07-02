@@ -24,129 +24,103 @@ export default {
       type: [ Number, null ], // CodeLanguage enum (with number)
       required: true,
     },
-    codeModalOpen: {
-      type: Boolean,
-      required: true,
-      default: false,
-    }
   },
   methods: {
     TagColor,
     GithubCodeLink,
-    closeModal() {
-      this.$emit("closeModal");
-    }
   },
-  updated() {
-    if (this.codeModalOpen) Prism.highlightAll();
-  },
-  watch: {
-    selectedQuestion(newValue) {
-        if (newValue) this.rawUrl = this.selectedCodeLanguage === CodeLanguage.Python ? this.GithubCodeLink(newValue.pythonUrl) : this.GithubCodeLink(newValue.javaUrl);
-        this.componentKey += 1; // Force re-rendering of component by plusing 1 every cycle
-    },
-    selectedCodeLanguage(newValue) {
-        this.rawUrl = newValue === CodeLanguage.Python ? this.GithubCodeLink(this.selectedQuestion.pythonUrl) : this.GithubCodeLink(this.selectedQuestion.javaUrl);
-        this.componentKey += 1; // Force re-rendering of component by plusing 1 every cycle
-    }
+  mounted() {
+    Prism.highlightAll();
   },
   data() {
     return {
       Difficulty,
       CodeLanguage,
-      rawUrl: "",
-      componentKey: 0, // To force re-rendering of the code snippet
     };
   },
-  computed: {
-    githubUrl() {
-      if (this.selectedQuestion) return this.selectedCodeLanguage === CodeLanguage.Python ? this.selectedQuestion.pythonUrl : this.selectedQuestion.javaUrl;
-      return "";
-    }
-  }
 };
 </script>
 
 <template>
-  <bx-modal :open="codeModalOpen" @bx-modal-beingclosed="closeModal">
-    <bx-modal-header>
-      <bx-modal-close-button></bx-modal-close-button>
-      <bx-modal-label>Leetcode Problem</bx-modal-label>
+  <bx-modal-header>
+    <bx-modal-close-button></bx-modal-close-button>
+    <bx-modal-label>Leetcode Problem</bx-modal-label>
 
-      <div class="flex items-center my-2">
-        <bx-tag
-          v-if="selectedQuestion"
-          class="ml-0"
-          :type="TagColor(selectedQuestion.difficulty)"
-        >
-          {{ Difficulty[selectedQuestion.difficulty] }}
-        </bx-tag>
-        <bx-tooltip-icon
-          alignment="center"
-          :body-text="CodeLanguage[selectedCodeLanguage]"
-          direction="right"
-        >
-          <bx-tag v-if="selectedQuestion" type="cyan">
-            <font-awesome-icon
-              size="lg"
-              :icon="`fa-brands fa-${CodeLanguage[
-                selectedCodeLanguage
-              ].toLowerCase()}`"
-            />
-          </bx-tag>
-        </bx-tooltip-icon>
-      </div>
-      <div v-if="selectedQuestion" class="flex items-center">
-        <bx-modal-heading>
-          {{ selectedQuestion.question }}
-        </bx-modal-heading>
-        <bx-tooltip-icon
-          v-if="selectedQuestion.blindQuestion"
-          class="ml-2 flex items-center justify-center"
-          alignment="center"
-          body-text="This problem is in Blind 75"
-          direction="bottom"
-        >
-          <img
-            src="~/assets/img/team_blind_favicon.ico"
-            alt="Team Blind Logo"
-            style="height: 18px"
-          />
-        </bx-tooltip-icon>
-      </div>
-    </bx-modal-header>
-
-    <!-- Auto focus on this instead of other tooltips -->
-    <bx-tooltip-icon alignment="center" direction="bottom"></bx-tooltip-icon>
-
-    <!-- :key="componentKey": remount component when selectedQuestion changes -->
-    <bx-modal-body
-      v-if="selectedQuestion"
-      :key="componentKey"
-      class="px-5 mb-5"
-    >
-      <p>Solution:</p>
-      <pre
-        ref="code"
-        :language="CodeLanguage[selectedCodeLanguage].toLowerCase()"
-        class="line-numbers"
-        :data-src="rawUrl"
-      ></pre>
-    </bx-modal-body>
-    <bx-modal-footer>
-      <bx-modal-footer-button kind="secondary" data-modal-close>
-        Close
-      </bx-modal-footer-button>
-      <bx-modal-footer-button kind="primary" :href="githubUrl" target="_blank">
-        <span class="!whitespace-nowrap">
-          <font-awesome-icon icon="fa-brands fa-github" size="lg" />
-          &nbsp;View in GitHub&nbsp;
+    <div class="flex items-center my-2">
+      <bx-tag class="ml-0" :type="TagColor(selectedQuestion.difficulty)">
+        {{ Difficulty[selectedQuestion.difficulty] }}
+      </bx-tag>
+      <bx-tooltip-icon
+        alignment="center"
+        :body-text="CodeLanguage[selectedCodeLanguage]"
+        direction="right"
+      >
+        <bx-tag type="cyan">
           <font-awesome-icon
-            icon="fa-solid fa-up-right-from-square"
-            size="xs"
+            size="lg"
+            :icon="`fa-brands fa-${CodeLanguage[
+              selectedCodeLanguage
+            ].toLowerCase()}`"
           />
-        </span>
-      </bx-modal-footer-button>
-    </bx-modal-footer>
-  </bx-modal>
+        </bx-tag>
+      </bx-tooltip-icon>
+    </div>
+    <div class="flex items-center">
+      <bx-modal-heading>
+        {{ selectedQuestion.question }}
+      </bx-modal-heading>
+      <bx-tooltip-icon
+        v-if="selectedQuestion.blindQuestion"
+        class="ml-2 flex items-center justify-center"
+        alignment="center"
+        body-text="This problem is in Blind 75"
+        direction="bottom"
+      >
+        <img
+          src="~/assets/img/team_blind_favicon.ico"
+          alt="Team Blind Logo"
+          style="height: 18px"
+        />
+      </bx-tooltip-icon>
+    </div>
+  </bx-modal-header>
+
+  <!-- Auto focus on this instead of other tooltips -->
+  <bx-tooltip-icon alignment="center" direction="bottom"></bx-tooltip-icon>
+
+  <bx-modal-body class="px-5 mb-5">
+    <p>Solution:</p>
+    <pre
+      ref="code"
+      :language="CodeLanguage[selectedCodeLanguage].toLowerCase()"
+      class="line-numbers"
+      :data-src="
+        GithubCodeLink(
+          selectedCodeLanguage === CodeLanguage.Python
+            ? selectedQuestion.pythonUrl
+            : selectedQuestion.javaUrl
+        )
+      "
+    ></pre>
+  </bx-modal-body>
+  <bx-modal-footer>
+    <bx-modal-footer-button kind="secondary" data-modal-close>
+      Close
+    </bx-modal-footer-button>
+    <bx-modal-footer-button
+      kind="primary"
+      :href="
+        selectedCodeLanguage === CodeLanguage.Python
+          ? selectedQuestion.pythonUrl
+          : selectedQuestion.javaUrl
+      "
+      target="_blank"
+    >
+      <span class="!whitespace-nowrap">
+        <font-awesome-icon icon="fa-brands fa-github" size="lg" />
+        &nbsp;View in GitHub&nbsp;
+        <font-awesome-icon icon="fa-solid fa-up-right-from-square" size="xs" />
+      </span>
+    </bx-modal-footer-button>
+  </bx-modal-footer>
 </template>

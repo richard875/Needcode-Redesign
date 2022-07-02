@@ -254,14 +254,13 @@ export default {
             <!-- Only show on small screen -->
             <div class="md:hidden flex-row-reverse flex items-center">
               <bx-overflow-menu size="sm">
-                <bx-overflow-menu-body alignment="end">
+                <bx-overflow-menu-body class="mt-2" alignment="end">
                   <bx-modal-label class="w-full pl-4 py-2 !m-0 bg-zinc-200">
                     Code
                   </bx-modal-label>
                   <!-- Python -->
                   <bx-overflow-menu-item
                     v-if="question.pythonUrl !== ''"
-                    class="border-t border-gray-300"
                     @click="triggerModal(question, CodeLanguage.Python)"
                   >
                     Python

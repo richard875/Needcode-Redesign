@@ -25,7 +25,7 @@ export default {
     };
   },
   mounted() {
-    setTimeout(() => (this.displayLoading = false), 1000);
+    this.displayLoading = false;
   },
   methods: {
     emitUpdateCurrentTab(index: number) {

@@ -33,7 +33,6 @@ Drop down list is out of place on safari when scrolled
 Mobile view
 Dark mode
 Search functionality
-Add prefilled and customize hints
 and more...
 ```
 

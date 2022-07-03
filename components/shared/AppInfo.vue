@@ -9,6 +9,17 @@
     </a>
   </p>
   <p>
+    {{ new Date().getFullYear() }} a
+    <a
+      href="https://richard-lee.com/"
+      target="_blank"
+      class="text-blue-500 hover:text-blue-700"
+    >
+      Richard Lee's
+    </a>
+    production
+  </p>
+  <p>
     Contribute solutions:
     <a
       href="https://github.com/neetcode-gh/leetcode"

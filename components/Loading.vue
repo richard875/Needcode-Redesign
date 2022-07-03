@@ -41,14 +41,14 @@ export default {
   }
 }
 
-$degrees: 360deg/3;
+$degrees: calc(360deg / 3);
 $move: 130px;
 $move-2: 75px;
 
 @mixin center($w, $h) {
   position: absolute;
-  top: calc(50% - #{$h/2});
-  left: calc(50% - #{$w/2});
+  top: calc(50% - #{calc($h / 2)});
+  left: calc(50% - #{calc($w / 2)});
 }
 @keyframes rotate {
   100% {

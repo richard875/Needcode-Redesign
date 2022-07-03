@@ -34,6 +34,11 @@ export default defineNuxtConfig({
       ],
     },
   },
+  runtimeConfig: {
+    public: {
+      googleAnalyticsId: "",
+    },
+  },
   typescript: {
     shim: false,
   },

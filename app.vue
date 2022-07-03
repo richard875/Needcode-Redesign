@@ -35,6 +35,7 @@ export default {
       this.currentTab = index;
     },
     emitUpdateBlindQuestions(blindQuestions: boolean) {
+      this.menuOpen = false;
       this.blindQuestions = blindQuestions;
       this.questions = DeepCopy(data) as Array<QuestionSet>;
 

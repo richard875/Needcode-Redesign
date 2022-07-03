@@ -63,7 +63,8 @@ export default {
       </div>
       <div v-else class="font-semibold">
         <bx-textarea
-          v-model="hint"
+          :value="hint"
+          @input="(event) => (hint = event.target.value)"
           placeholder="Add hints or notes..."
           rows="10"
           cols="50"

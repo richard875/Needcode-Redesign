@@ -93,6 +93,7 @@ export default {
       @click="menuOpen = false"
       class="ml-0 lg:ml-80 !pt-16 lg:!pt-20 p-3 lg:p-10"
     >
+      <p>{{ process.env.GOOGLE_ANALYTICS_ID }}</p>
       <QuestionSection
         :questions="questions"
         :current-tab="currentTab"

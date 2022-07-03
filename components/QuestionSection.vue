@@ -293,7 +293,9 @@ export default {
                     Neetcode
                   </bx-overflow-menu-item>
                   <!-- Customize -->
-                  <bx-overflow-menu-item>Add/Edit</bx-overflow-menu-item>
+                  <bx-overflow-menu-item @click="triggerHint(question, false)">
+                    Add/Edit
+                  </bx-overflow-menu-item>
                 </bx-overflow-menu-body>
               </bx-overflow-menu>
               <bx-btn
@@ -532,7 +534,7 @@ export default {
       v-if="showToast"
       lowContrast
       class="fixed top-14 right-0 mr-4 mb-4"
-      title="Autosaved&nbsp;&nbsp;💾"
+      title="Saved&nbsp;&nbsp;💾"
     >
     </bx-toast-notification>
   </Transition>

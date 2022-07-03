@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div>
     <span class="IBMPlexMono-Bold">IBMPlexMono-Bold</span>
   </div>
@@ -49,4 +49,4 @@
   <div>
     <span class="IBMPlexMono-ThinItalic">IBMPlexMono-ThinItalic</span>
   </div>
-</template>
+</template> -->

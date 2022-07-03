@@ -1,35 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 /*#region Define font face*/
-@font-face {
-  font-family: "IBMPlexMonoBold";
-  src: local("IBMPlexMono"),
-    url(../../assets/fonts/IBMPlexMono-Bold.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "IBMPlexMonoBold";
+//   src: local("IBMPlexMono"),
+//     url(../../assets/fonts/IBMPlexMono-Bold.ttf) format("truetype");
+// }
 
-@font-face {
-  font-family: "IBMPlexMonoBoldItalic";
-  src: local("IBMPlexMono"),
-    url(../../assets/fonts/IBMPlexMono-BoldItalic.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "IBMPlexMonoBoldItalic";
+//   src: local("IBMPlexMono"),
+//     url(../../assets/fonts/IBMPlexMono-BoldItalic.ttf) format("truetype");
+// }
 
-@font-face {
-  font-family: "IBMPlexMonoExtraLight";
-  src: local("IBMPlexMono"),
-    url(../../assets/fonts/IBMPlexMono-ExtraLight.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "IBMPlexMonoExtraLight";
+//   src: local("IBMPlexMono"),
+//     url(../../assets/fonts/IBMPlexMono-ExtraLight.ttf) format("truetype");
+// }
 
-@font-face {
-  font-family: "IBMPlexMonoExtraLightItalic";
-  src: local("IBMPlexMono"),
-    url(../../assets/fonts/IBMPlexMono-ExtraLightItalic.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "IBMPlexMonoExtraLightItalic";
+//   src: local("IBMPlexMono"),
+//     url(../../assets/fonts/IBMPlexMono-ExtraLightItalic.ttf) format("truetype");
+// }
 
-@font-face {
-  font-family: "IBMPlexMonoItalic";
-  src: local("IBMPlexMono"),
-    url(../../assets/fonts/IBMPlexMono-Italic.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "IBMPlexMonoItalic";
+//   src: local("IBMPlexMono"),
+//     url(../../assets/fonts/IBMPlexMono-Italic.ttf) format("truetype");
+// }
 
 @font-face {
   font-family: "IBMPlexMonoLight";
@@ -37,29 +37,29 @@
     url(../../assets/fonts/IBMPlexMono-Light.ttf) format("truetype");
 }
 
-@font-face {
-  font-family: "IBMPlexMonoLightItalic";
-  src: local("IBMPlexMono"),
-    url(../../assets/fonts/IBMPlexMono-LightItalic.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "IBMPlexMonoLightItalic";
+//   src: local("IBMPlexMono"),
+//     url(../../assets/fonts/IBMPlexMono-LightItalic.ttf) format("truetype");
+// }
 
-@font-face {
-  font-family: "IBMPlexMonoMedium";
-  src: local("IBMPlexMono"),
-    url(../../assets/fonts/IBMPlexMono-Medium.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "IBMPlexMonoMedium";
+//   src: local("IBMPlexMono"),
+//     url(../../assets/fonts/IBMPlexMono-Medium.ttf) format("truetype");
+// }
 
-@font-face {
-  font-family: "IBMPlexMonoMediumItalic";
-  src: local("IBMPlexMono"),
-    url(../../assets/fonts/IBMPlexMono-MediumItalic.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "IBMPlexMonoMediumItalic";
+//   src: local("IBMPlexMono"),
+//     url(../../assets/fonts/IBMPlexMono-MediumItalic.ttf) format("truetype");
+// }
 
-@font-face {
-  font-family: "IBMPlexMonoRegular";
-  src: local("IBMPlexMono"),
-    url(../../assets/fonts/IBMPlexMono-Regular.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "IBMPlexMonoRegular";
+//   src: local("IBMPlexMono"),
+//     url(../../assets/fonts/IBMPlexMono-Regular.ttf) format("truetype");
+// }
 
 @font-face {
   font-family: "IBMPlexMonoSemiBold";
@@ -67,99 +67,99 @@
     url(../../assets/fonts/IBMPlexMono-SemiBold.ttf) format("truetype");
 }
 
-@font-face {
-  font-family: "IBMPlexMonoSemiBoldItalic";
-  src: local("IBMPlexMono"),
-    url(../../assets/fonts/IBMPlexMono-SemiBoldItalic.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "IBMPlexMonoSemiBoldItalic";
+//   src: local("IBMPlexMono"),
+//     url(../../assets/fonts/IBMPlexMono-SemiBoldItalic.ttf) format("truetype");
+// }
 
-@font-face {
-  font-family: "IBMPlexMonoText";
-  src: local("IBMPlexMono"),
-    url(../../assets/fonts/IBMPlexMono-Text.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "IBMPlexMonoText";
+//   src: local("IBMPlexMono"),
+//     url(../../assets/fonts/IBMPlexMono-Text.ttf) format("truetype");
+// }
 
-@font-face {
-  font-family: "IBMPlexMonoTextItalic";
-  src: local("IBMPlexMono"),
-    url(../../assets/fonts/IBMPlexMono-TextItalic.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "IBMPlexMonoTextItalic";
+//   src: local("IBMPlexMono"),
+//     url(../../assets/fonts/IBMPlexMono-TextItalic.ttf) format("truetype");
+// }
 
-@font-face {
-  font-family: "IBMPlexMonoThin";
-  src: local("IBMPlexMono"),
-    url(../../assets/fonts/IBMPlexMono-Thin.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "IBMPlexMonoThin";
+//   src: local("IBMPlexMono"),
+//     url(../../assets/fonts/IBMPlexMono-Thin.ttf) format("truetype");
+// }
 
-@font-face {
-  font-family: "IBMPlexMonoThinItalic";
-  src: local("IBMPlexMono"),
-    url(../../assets/fonts/IBMPlexMono-ThinItalic.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "IBMPlexMonoThinItalic";
+//   src: local("IBMPlexMono"),
+//     url(../../assets/fonts/IBMPlexMono-ThinItalic.ttf) format("truetype");
+// }
 /*#endregion */
 
 /*#region Use fonts*/
-.IBMPlexMono-Bold {
-  font-family: "IBMPlexMonoBold" !important;
-}
+// .IBMPlexMono-Bold {
+//   font-family: "IBMPlexMonoBold" !important;
+// }
 
-.IBMPlexMono-BoldItalic {
-  font-family: "IBMPlexMonoBoldItalic" !important;
-}
+// .IBMPlexMono-BoldItalic {
+//   font-family: "IBMPlexMonoBoldItalic" !important;
+// }
 
-.IBMPlexMono-ExtraLight {
-  font-family: "IBMPlexMonoExtraLight" !important;
-}
+// .IBMPlexMono-ExtraLight {
+//   font-family: "IBMPlexMonoExtraLight" !important;
+// }
 
-.IBMPlexMono-ExtraLightItalic {
-  font-family: "IBMPlexMonoExtraLightItalic" !important;
-}
+// .IBMPlexMono-ExtraLightItalic {
+//   font-family: "IBMPlexMonoExtraLightItalic" !important;
+// }
 
-.IBMPlexMono-Italic {
-  font-family: "IBMPlexMonoItalic" !important;
-}
+// .IBMPlexMono-Italic {
+//   font-family: "IBMPlexMonoItalic" !important;
+// }
 
 .IBMPlexMono-Light {
   font-family: "IBMPlexMonoLight" !important;
 }
 
-.IBMPlexMono-LightItalic {
-  font-family: "IBMPlexMonoLightItalic" !important;
-}
+// .IBMPlexMono-LightItalic {
+//   font-family: "IBMPlexMonoLightItalic" !important;
+// }
 
-.IBMPlexMono-Medium {
-  font-family: "IBMPlexMonoMedium" !important;
-}
+// .IBMPlexMono-Medium {
+//   font-family: "IBMPlexMonoMedium" !important;
+// }
 
-.IBMPlexMono-MediumItalic {
-  font-family: "IBMPlexMonoMediumItalic" !important;
-}
+// .IBMPlexMono-MediumItalic {
+//   font-family: "IBMPlexMonoMediumItalic" !important;
+// }
 
-.IBMPlexMono-Regular {
-  font-family: "IBMPlexMonoRegular" !important;
-}
+// .IBMPlexMono-Regular {
+//   font-family: "IBMPlexMonoRegular" !important;
+// }
 
 .IBMPlexMono-SemiBold {
   font-family: "IBMPlexMonoSemiBold" !important;
 }
 
-.IBMPlexMono-SemiBoldItalic {
-  font-family: "IBMPlexMonoSemiBoldItalic" !important;
-}
+// .IBMPlexMono-SemiBoldItalic {
+//   font-family: "IBMPlexMonoSemiBoldItalic" !important;
+// }
 
-.IBMPlexMono-Text {
-  font-family: "IBMPlexMonoText" !important;
-}
+// .IBMPlexMono-Text {
+//   font-family: "IBMPlexMonoText" !important;
+// }
 
-.IBMPlexMono-TextItalic {
-  font-family: "IBMPlexMonoTextItalic" !important;
-}
+// .IBMPlexMono-TextItalic {
+//   font-family: "IBMPlexMonoTextItalic" !important;
+// }
 
-.IBMPlexMono-Thin {
-  font-family: "IBMPlexMonoThin" !important;
-}
+// .IBMPlexMono-Thin {
+//   font-family: "IBMPlexMonoThin" !important;
+// }
 
-.IBMPlexMono-ThinItalic {
-  font-family: "IBMPlexMonoThinItalic" !important;
-}
+// .IBMPlexMono-ThinItalic {
+//   font-family: "IBMPlexMonoThinItalic" !important;
+// }
 /*#endregion */

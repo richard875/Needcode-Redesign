@@ -570,7 +570,7 @@ export default {
     <bx-toast-notification
       v-if="showToast"
       lowContrast
-      class="fixed top-14 right-0 mr-4 mb-4"
+      class="fixed top-14 right-0 mr-4 mb-4 select-none"
       title="Saved&nbsp;&nbsp;💾"
     >
     </bx-toast-notification>

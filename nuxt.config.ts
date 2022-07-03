@@ -74,6 +74,8 @@ export default defineNuxtConfig({
           "bx-overflow-menu",
           "bx-overflow-menu-body",
           "bx-overflow-menu-item",
+          "bx-textarea",
+          "bx-toast-notification",
         ].includes(tag),
     },
   },

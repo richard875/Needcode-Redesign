@@ -6,7 +6,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   nuxtApp.vueApp.use(VueGtag, {
     property: {
-      id: runtimeConfig.googleAnalyticsId || process.env.GOOGLE_ANALYTICS_ID,
+      id: process.env.GOOGLE_ANALYTICS_ID,
     },
   });
 });

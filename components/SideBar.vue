@@ -1,16 +1,17 @@
 <script lang="ts">
+import type { PropType } from "vue";
 import QuestionSet from "src/models/questionSet";
 
 export default {
   emits: ["updateCurrentTab", "updateQuestionMode"],
   props: {
     questions: {
-      type: Array<QuestionSet>,
-      required: true
+      type: Object as PropType<Array<QuestionSet>>,
+      required: true,
     },
     totalCompletedQuestions: {
       type: Number,
-      required: true
+      required: true,
     },
     menuOpen: {
       type: Boolean,
@@ -20,7 +21,7 @@ export default {
     return {
       currentTab: 0 as Number,
       blindQuestions: false as Boolean,
-      openModal: false as Boolean
+      openModal: false as Boolean,
     };
   },
   methods: {
@@ -31,13 +32,15 @@ export default {
     changeQuestionMode(blindQuestions: boolean) {
       this.blindQuestions = blindQuestions;
       this.$emit("updateQuestionMode", this.blindQuestions);
-    }
+    },
   },
   computed: {
     totalNumberOfQuestion() {
       let total: number = 0;
-      this.questions.forEach((questionSet: QuestionSet) => total += questionSet.questions.length);
-      return total
+      this.questions.forEach(
+        (questionSet: QuestionSet) => (total += questionSet.questions.length)
+      );
+      return total;
     },
   },
 };

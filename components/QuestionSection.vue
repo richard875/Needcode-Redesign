@@ -1,4 +1,5 @@
 <script lang="ts">
+import type { PropType } from "vue";
 import Question from "src/models/question";
 import QuestionSet from "src/models/questionSet";
 import Difficulty from "../src/enum/difficulty";
@@ -9,13 +10,14 @@ import TagColorMobile from "../helper/tagColorMobile";
 import NestedObjectLength from "../helper/nestedObjectLength";
 
 // Const value
-const NEETCODE_LOCALSTORAGE_QUESTION_LIST = "neetcode_localstorage_question_list";
+const NEETCODE_LOCALSTORAGE_QUESTION_LIST =
+  "neetcode_localstorage_question_list";
 
 export default {
   emits: ["totalCompletedQuestion"],
   props: {
     questions: {
-      type: Array<QuestionSet>,
+      type: Object as PropType<Array<QuestionSet>>,
       required: true,
     },
     currentTab: {
@@ -46,10 +48,15 @@ export default {
       return this.questions[this.currentTab] as QuestionSet;
     },
     setCompletedQuestion() {
-      if (this.currentSavedQuestions && this.currentSavedQuestions[this.selectedQuestion.questionSet]) {
+      if (
+        this.currentSavedQuestions &&
+        this.currentSavedQuestions[this.selectedQuestion.questionSet]
+      ) {
         let numberOfCompletedQuestion = 0;
 
-        Object.entries(this.currentSavedQuestions[this.selectedQuestion.questionSet]).forEach((item) => {
+        Object.entries(
+          this.currentSavedQuestions[this.selectedQuestion.questionSet]
+        ).forEach((item) => {
           if (this.blindQuestions) {
             if (item[1] == 1) numberOfCompletedQuestion++;
           } else {
@@ -62,9 +69,13 @@ export default {
       return 0;
     },
     totalCompletedQuestion() {
-      if (this.currentSavedQuestions) return NestedObjectLength(this.currentSavedQuestions, this.blindQuestions);
+      if (this.currentSavedQuestions)
+        return NestedObjectLength(
+          this.currentSavedQuestions,
+          this.blindQuestions
+        );
       return 0;
-    }
+    },
   },
   watch: {
     totalCompletedQuestion(newValue: number) {
@@ -72,30 +83,52 @@ export default {
     },
   },
   mounted() {
-    const neetCodeLocalStorage = localStorage.getItem(NEETCODE_LOCALSTORAGE_QUESTION_LIST);
-    if (!neetCodeLocalStorage) localStorage.setItem(NEETCODE_LOCALSTORAGE_QUESTION_LIST, JSON.stringify({}));
-    this.currentSavedQuestions = JSON.parse(neetCodeLocalStorage);;
+    const neetCodeLocalStorage = localStorage.getItem(
+      NEETCODE_LOCALSTORAGE_QUESTION_LIST
+    );
+    if (!neetCodeLocalStorage)
+      localStorage.setItem(
+        NEETCODE_LOCALSTORAGE_QUESTION_LIST,
+        JSON.stringify({})
+      );
+    this.currentSavedQuestions = JSON.parse(neetCodeLocalStorage);
   },
   methods: {
     Goto,
     TagColor,
     TagColorMobile,
     NestedObjectLength,
-    statusChecked(event: any, questionSet: string, questionKey: string, blindQuestion: boolean) {
-      const neetCodeLocalStorage = localStorage.getItem(NEETCODE_LOCALSTORAGE_QUESTION_LIST);
+    statusChecked(
+      event: any,
+      questionSet: string,
+      questionKey: string,
+      blindQuestion: boolean
+    ) {
+      const neetCodeLocalStorage = localStorage.getItem(
+        NEETCODE_LOCALSTORAGE_QUESTION_LIST
+      );
       let neetCodeLocalStorageObject = JSON.parse(neetCodeLocalStorage);
 
       if (neetCodeLocalStorageObject) {
-        if (neetCodeLocalStorageObject[questionSet] && (neetCodeLocalStorageObject[questionSet][questionKey] != null)) {
+        if (
+          neetCodeLocalStorageObject[questionSet] &&
+          neetCodeLocalStorageObject[questionSet][questionKey] != null
+        ) {
           delete neetCodeLocalStorageObject[questionSet][questionKey];
         } else {
-          if (!neetCodeLocalStorageObject[questionSet]) neetCodeLocalStorageObject[questionSet] = {};
-          neetCodeLocalStorageObject[questionSet][questionKey] = blindQuestion ? 1 : 2;
+          if (!neetCodeLocalStorageObject[questionSet])
+            neetCodeLocalStorageObject[questionSet] = {};
+          neetCodeLocalStorageObject[questionSet][questionKey] = blindQuestion
+            ? 1
+            : 2;
         }
       }
 
       this.currentSavedQuestions = neetCodeLocalStorageObject;
-      localStorage.setItem(NEETCODE_LOCALSTORAGE_QUESTION_LIST, JSON.stringify(neetCodeLocalStorageObject));
+      localStorage.setItem(
+        NEETCODE_LOCALSTORAGE_QUESTION_LIST,
+        JSON.stringify(neetCodeLocalStorageObject)
+      );
     },
     triggerModal(codeProblem: Question, codeLanguage: CodeLanguage) {
       this.selectedProblem = codeProblem;
@@ -108,19 +141,23 @@ export default {
       this.neetcodeHintModalOpen = true;
     },
     checked(leetcodeUrl: string) {
-      return this.currentSavedQuestions &&
-             this.currentSavedQuestions[this.selectedQuestion.questionSet] &&
-             this.currentSavedQuestions[this.selectedQuestion.questionSet][leetcodeUrl];
+      return (
+        this.currentSavedQuestions &&
+        this.currentSavedQuestions[this.selectedQuestion.questionSet] &&
+        this.currentSavedQuestions[this.selectedQuestion.questionSet][
+          leetcodeUrl
+        ]
+      );
     },
     closeAndDisplayToast(changed: boolean) {
-      this.neetcodeHintModalOpen = false
+      this.neetcodeHintModalOpen = false;
 
       if (changed) {
         this.showToast = true;
-        setTimeout(() => this.showToast = false, 3000);
+        setTimeout(() => (this.showToast = false), 3000);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

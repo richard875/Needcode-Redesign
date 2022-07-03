@@ -1,10 +1,13 @@
 <script lang="ts">
+import type { PropType } from "vue";
+import Question from "../../src/models/question";
+
 const SUFFIX = "**HINT";
 
 export default {
   props: {
     selectedQuestion: {
-      type: [Object, null],
+      type: [Object as PropType<Question>, null],
       required: true,
     },
     isNeetcodeHint: {

@@ -1,4 +1,5 @@
-<script lang="js">
+<script lang="ts">
+import type { PropType } from "vue";
 import Prism from "prismjs";
 import "../../src/style/code/prism-google-theme.css"; // Google code snippet theme
 import "prismjs/components/prism-python";
@@ -9,19 +10,20 @@ import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs/plugins/toolbar/prism-toolbar.js";
 import "prismjs/plugins/toolbar/prism-toolbar.css";
 import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.js";
-import TagColor from "../../helper/tagColor"
-import GithubCodeLink from "../../helper/githubCodeLink"
+import TagColor from "../../helper/tagColor";
+import GithubCodeLink from "../../helper/githubCodeLink";
+import Question from "src/models/question";
 import Difficulty from "../../src/enum/difficulty";
 import CodeLanguage from "../../src/enum/codeLanguage";
 
 export default {
   props: {
     selectedQuestion: {
-      type: [ Object, null ], // Question type
+      type: [Object as PropType<Question>, null],
       required: true,
     },
     selectedCodeLanguage: {
-      type: [ Number, null ], // CodeLanguage enum (with number)
+      type: [Number, null], // CodeLanguage enum (with number)
       required: true,
     },
   },

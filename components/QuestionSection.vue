@@ -32,11 +32,13 @@ export default {
       Difficulty,
       CodeLanguage,
       openModal: false as Boolean,
-      openNeetcodeHint: false as Boolean,
       selectedProblem: null as Question | null,
       selectedCodeLanguage: null as CodeLanguage | null,
       codeModalOpen: false as Boolean,
+      neetcodeHintModalOpen: false as Boolean,
+      isNeetcodeHint: null as Boolean,
       currentSavedQuestions: null as Object | null,
+      showToast: false as Boolean,
     };
   },
   computed: {
@@ -102,12 +104,21 @@ export default {
     },
     triggerHint(codeProblem: Question, isNeetcode: boolean) {
       this.selectedProblem = codeProblem;
-      this.openNeetcodeHint = true;
+      this.isNeetcodeHint = isNeetcode;
+      this.neetcodeHintModalOpen = true;
     },
     checked(leetcodeUrl: string) {
       return this.currentSavedQuestions &&
              this.currentSavedQuestions[this.selectedQuestion.questionSet] &&
              this.currentSavedQuestions[this.selectedQuestion.questionSet][leetcodeUrl];
+    },
+    closeAndDisplayToast(changed: boolean) {
+      this.neetcodeHintModalOpen = false
+
+      if (changed) {
+        this.showToast = true;
+        setTimeout(() => this.showToast = false, 3000);
+      }
     }
   }
 };
@@ -374,7 +385,12 @@ export default {
                 body-text="Add your own"
                 direction="bottom"
               >
-                <bx-btn kind="secondary" icon-layout="" size="sm">
+                <bx-btn
+                  kind="secondary"
+                  icon-layout=""
+                  size="sm"
+                  @click="triggerHint(question, false)"
+                >
                   <svg
                     class="svg-inline--fa fa-python"
                     aria-hidden="true"
@@ -502,13 +518,23 @@ export default {
 
   <!-- Hint modal box -->
   <Transition name="bounce">
-    <bx-modal
-      v-if="openNeetcodeHint"
-      @bx-modal-beingclosed="openNeetcodeHint = false"
-      open
+    <SharedHintPopup
+      v-if="neetcodeHintModalOpen"
+      :selected-question="selectedProblem"
+      :is-neetcode-hint="isNeetcodeHint"
+      @closeHintModal="closeAndDisplayToast"
+    />
+  </Transition>
+
+  <!-- Toast notification -->
+  <Transition name="fade">
+    <bx-toast-notification
+      v-if="showToast"
+      lowContrast
+      class="fixed top-14 right-0 mr-4 mb-4"
+      title="Autosaved&nbsp;&nbsp;💾"
     >
-      <SharedHintPopup :selected-question="selectedProblem" />
-    </bx-modal>
+    </bx-toast-notification>
   </Transition>
 </template>
 

@@ -28,7 +28,6 @@ export default {
   },
   mounted() {
     this.displayLoading = false;
-    console.log(GOOGLE_ANALYTICS_ID);
   },
   methods: {
     emitUpdateCurrentTab(index: number) {

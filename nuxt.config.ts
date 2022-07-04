@@ -12,11 +12,55 @@ export default defineNuxtConfig({
           name: "viewport",
           content: "width=device-width, initial-scale=1, maximum-scale=1", // Prevent iOS devices from zooming on focus
         },
-        // {
-        //   hid: "description",
-        //   name: "description",
-        //   content: "A better way to prepare for coding interviews - Neetcode.io",
-        // },
+        {
+          hid: "description",
+          name: "description",
+          content: "Made with ♥ in Sydney, Australia 🇦🇺",
+        },
+        // Open Graph / Facebook
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          property: "og:url",
+          content: "https://neetcode.richard-lee.com/",
+        },
+        {
+          property: "og:title",
+          content:
+            "A better way to prepare for coding interviews - Neetcode.io",
+        },
+        {
+          property: "og:description",
+          content: "Made with ♥ in Sydney, Australia 🇦🇺 ",
+        },
+        {
+          property: "og:image",
+          content: "https://neetcode.richard-lee.com/background.png",
+        },
+        // Twitter
+        {
+          property: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          property: "twitter:url",
+          content: "https://neetcode.richard-lee.com/",
+        },
+        {
+          property: "twitter:title",
+          content:
+            "A better way to prepare for coding interviews - Neetcode.io",
+        },
+        {
+          property: "twitter:description",
+          content: "Made with ♥ in Sydney, Australia 🇦🇺 ",
+        },
+        {
+          property: "twitter:image",
+          content: "https://neetcode.richard-lee.com/background.png",
+        },
       ],
       link: [
         {

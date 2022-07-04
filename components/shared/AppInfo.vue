@@ -41,7 +41,7 @@
   <p>
     Copyright © {{ new Date().getFullYear() }}
     <a
-      href="https://neetcode.io/"
+      href="https://neetcode.richard-lee.com/"
       target="_blank"
       class="text-blue-500 hover:text-blue-700"
       >NeetCode.io</a

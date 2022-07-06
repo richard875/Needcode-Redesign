@@ -54,12 +54,19 @@ export default {
     ]"
   >
     <div class="fixed top-12 w-80 z-50 bg-white sidebar-border">
-      <bx-search
-        disabled
-        label-text="Search"
-        placeholder="Search Questions"
-        size="xl"
-      ></bx-search>
+      <bx-tooltip-icon
+        alignment="center"
+        body-text="Feature coming soon!"
+        direction="right"
+      >
+        <bx-search
+          class="w-80 sidebar-border"
+          disabled
+          label-text="Search"
+          placeholder="Search Questions"
+          size="xl"
+        ></bx-search>
+      </bx-tooltip-icon>
 
       <!-- Tags -->
       <div class="p-3 select-none">

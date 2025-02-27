@@ -2,10 +2,16 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "preinstall": "node enforce-yarn.js",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
+  },
+  "packageManager": "yarn@1.22.22",
+  "engines": {
+    "yarn": "1.22.22",
+    "node": ">=18.17.0"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.1.4",
